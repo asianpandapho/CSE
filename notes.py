@@ -17,48 +17,97 @@ print (-12 % 2)
 print (1 % 1)
 print (1004 % 13)
 
-# Variable
-car_name = "Anou Mobile for you to DRIVE"
-car_type = "Lamborghini Aventador Sesto Elemento Honda Subaru"
-car_cylinders = 8
-car_mpg =  9000.1
+# # Variable
+# car_name = "Anou Mobile for you to DRIVE"
+# car_type = "Lamborghini Aventador Sesto Elemento Honda Subaru"
+# car_cylinders = 8
+# car_mpg =  9000.1
+#
+# # Inline Printing
+# print ("My car is a Honda Civic %s " % car_name)
+# print ("My car is the %s. It is a %s" % (car_name, car_type))
+#
+# # Taking Input
+# name = input ("What is your name?")
+# print ("Hello %s" % name)
+# print(name)
+# # print (name)
+# age = input ("What is your age?")
+# print ("You are %s" % age)
+# print(age)
+#
+#
+# # Change to the file
+#
+# def print_hw():
+#     print ("Hello World")
+#
+#
+# print_hw()
+#
+#
+# def say_hi(name): #name is a "paramater"
+#     print("Hello %s." % name)
+#     print("I hope you have a fantastic day")
+#
+#
+# say_hi
+#
+#
+# def birthday (age):
+#     age += 1 # age = age + 1
+#
+# say_hi ("John")
+# print ("John is 15. Next Year.")
+# birthday(15)
 
-# Inline Printing
-print ("My car is a Honda Civic %s " % car_name)
-print ("My car is the %s. It is a %s" % (car_name, car_type))
-
-# Taking Input
-name = input ("What is your name?")
-print ("Hello %s" % name)
-print(name)
-# print (name)
-age = input ("What is your age?")
-print ("You are %s" % age)
-print(age)
+# Press Ctrl-A and Ctrl-/
+# to comment old code
 
 
-# Change to the file
-
-def print_hw():
-    print ("Hello World")
+def f(x):
+    return x**5 + 4 + x **4 - 17*x**2 + 4
 
 
-print_hw()
+print(f(3) + f(5))
+
+# If statements
 
 
-def say_hi(name): #name is a "paramater"
-    print ("Hello %." % name)
-    print("I hope you have a fantastic day")
+def grade_calc(percentage):
+    if percentage >= 90:
+        return "A"
+    elif percentage >= 80:
+        return "B"
+    elif percentage >= 70:
+        return "C"
+    elif percentage >= 60:
+        return 'D'
+    else:
+        return "F"
+
+#     Loops
 
 
-say_hi("BoxBox")
+# for num in range(5):
+#     print (num + 1)
 
 
-def birthday (age):
-    age += 1 # age = age + 1
+# for yo in "in":
+#     print (yo)
 
-say_hi ("John")
-print ("John is 15. Next Year.")
-birthday(15)
+a = 1
+while  a <= 10:
+    print(a)
+    a +=1
+
+# response = ""
+# while response != "Hello":
+#     response = input("Say \"Hello\"")
 
 
+print ("Hello \nWorld") # \n means new line
+
+
+import random
+print (random.randint(0, 6))
