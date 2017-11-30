@@ -1,21 +1,23 @@
-print ("Hello World")
+import random
+
+print("Hello World")
 
 # print ("Anou Is Asian Daddy")
 
-print (3 + 5)
-print (5 - 3)
-print (5 * 3)
-print (6 / 2)
-print (3 ** 2)
-print () # Create a blank line
-print ("See if you can figure this out")
-print (13 % 12)
-print (15 % 5)
-print (5 % 3)
-print (14 % 14)
-print (-12 % 2)
-print (1 % 1)
-print (1004 % 13)
+print(3 + 5)
+print(5 - 3)
+print(5 * 3)
+print(6 / 2)
+print(3 ** 2)
+print()  # Create a blank line
+print("See if you can figure this out")
+print(13 % 12)
+print(15 % 5)
+print(5 % 3)
+print(14 % 14)
+print(-12 % 2)
+print(1 % 1)
+print(1004 % 13)
 
 # # Variable
 # car_name = "Anou Mobile for you to DRIVE"
@@ -66,7 +68,7 @@ print (1004 % 13)
 
 
 def f(x):
-    return x**5 + 4 + x **4 - 17*x**2 + 4
+    return x**5 + 4 + x ** 4 - 17*x**2 + 4
 
 
 print(f(3) + f(5))
@@ -97,17 +99,16 @@ def grade_calc(percentage):
 #     print (yo)
 
 a = 1
-while  a <= 10:
+while a <= 10:
     print(a)
-    a +=1
+    a += 1
 
 # response = ""
 # while response != "Hello":
 #     response = input("Say \"Hello\"")
 
 
-print ("Hello \nWorld") # \n means new line
+print("Hello \nWorld")  # \n means new line
 
 
-import random
-print (random.randint(0, 6))
+print(random.randint(0, 6))
