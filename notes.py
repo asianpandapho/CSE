@@ -112,3 +112,17 @@ print("Hello \nWorld")  # \n means new line
 
 
 print(random.randint(0, 6))
+
+# Comparisons
+print(1 == 1)  # Two equal signs to compare
+print(1 != 2)  # One is not equal to two
+print(not False)  # This prints true
+print(1 == 1 and 4 <= 5)
+print(1 < 0 or 5 > 1)
+
+# Recasting
+c = "1"
+print(c == 1)  # False - c is a string, 1 is a int
+print(int(c) == 1)  # True - Compares two ints
+print(c == str(1))  # True - Compares two strings
+

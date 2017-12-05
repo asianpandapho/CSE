@@ -29,3 +29,15 @@ def happy_bday(name):
     print ("Happy Birthday dear %s" + name)
     print ("Happy Birthday to You!")
 
+# 12.5.17
+"""Write a function called add_py
+that takes one parameter called "name"
+and prints out name.py
+example:
+add_py("I_ate_some") = "I_ate_some.py"
+"""
+
+
+def add_py(name):
+    print ("%s.py" % name) # Solution Juan
+    print (name  + ".py") # Solution Dos
