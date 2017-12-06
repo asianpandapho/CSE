@@ -125,4 +125,3 @@ c = "1"
 print(c == 1)  # False - c is a string, 1 is a int
 print(int(c) == 1)  # True - Compares two ints
 print(c == str(1))  # True - Compares two strings
-

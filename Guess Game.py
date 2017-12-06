@@ -2,28 +2,25 @@
 #
 
 import random
-number = (random.randint(1, 50))
-guess = ""
-print(number)
+number = (random.randint(0, 50))
+guess = "0"
+yes = "Correct"
+only5guess = "5"
 
-while guess != number:
+
+while int(guess) != number:
     guess = input("What number from 1- 50 am I thinking about?")
-    print(number == str(number))
-
-
-def higher_lower(higherorlower):
-    if guess == number:
-        print(True)
-    if guess >= str(number):
-        return "Lower"
-    if guess <= number:
-        return "Higher"
+    if guess == str(number):
+        print(yes)
+    elif int(guess) >= number:
+        print("Lower")
+    elif int(guess) <= number:
+        print("Higher")
+    elif int(only5guess) >= int(guess):
+        print("You Lose Get Rekt M8!")
 
 # Generate a random number between 1-50
 # Get a number (input) from the user
 # Compare the number to the input
 # Add "Higher" or "Lower"
 # Add 5 guesses
-
-
-
