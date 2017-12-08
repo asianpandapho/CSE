@@ -5,10 +5,11 @@ def reverse_order(first_name, last_name):
     # print("%s %s" % (last_name, first_name))
     print(last_name + " " + first_name)  # Concatenation
 
-
-def reverse_order():
-    first_name = input("What is your first name?")
-    last_name = input("What is your last name?")
+#
+# def reverse_order():
+#     first_name = input("What is your first name?")
+#     last_name = input("What is your last name?")
+#
 
 
 """Warmup #2
@@ -50,11 +51,11 @@ and print the sum of the numbers
 """
 
 
-def add(juan, dos, tres):
-    print(int(juan + dos + tres))
-
-
-add(90, 900, 9000)
+# def add(juan, dos, tres):
+#     print(int(juan + dos + tres))
+#
+#
+# add(90, 900, 9000)
 
 
 def repeat(string):
@@ -65,3 +66,9 @@ def repeat(string):
     for x in range(3):
         print(string)
 
+
+def date(month, day, year):
+    print(str(month) + "/" + str(day) + str(year))
+
+
+print(12, 8, 17)
