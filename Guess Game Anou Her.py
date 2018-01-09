@@ -7,7 +7,7 @@ guess = "0"
 yes = "Correct"
 guesses = 0
 
-
+# Describes exactly ONE turn. The while loop is the game controller
 while int(guess) != number and int(guesses) < 5:
     guess = input("What number from 1- 50 am I thinking about?")
     if int(guess) == number:
