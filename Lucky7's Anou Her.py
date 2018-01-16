@@ -29,8 +29,9 @@ while current_money > 0 and broke is False:
 if current_money == 0:
     print("You've played %s rounds!" % str(played))
     if max_money < 15:
-        print("You should've never played this game in the first place scrub, now you have no money, get a job.")
+        print("You should've never played this game in the first place, you didn't earn anything, SHAME.")
     elif max_money > 14:
         print("You should've stopped at round %s when you had $%s" % (total_rounds, max_money))
     broke = True
+
 # Anou Her
