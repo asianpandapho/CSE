@@ -136,7 +136,7 @@ for item in shopping_list:
     print(item)
 
 for num in the_count:
-    print(num * 2)
+    print(num ** 2)
 
 len(shopping_list)  # Gives me the length of the list XD
 range(3)  # Gives a list of the numbers 0 through 2
@@ -152,4 +152,7 @@ listOne = list(str1)
 print(listOne)
 listOne[11] = "."
 print(listOne)
+newStr = "■".join(listOne)
+print(newStr)
 
+# 
