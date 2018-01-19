@@ -152,7 +152,29 @@ listOne = list(str1)
 print(listOne)
 listOne[11] = "."
 print(listOne)
-newStr = "■".join(listOne)
+newStr = ("■".join(listOne))
 print(newStr)
 
-# 
+
+# Add things to a list
+shopping_list.append("Cereal")
+print(shopping_list)
+
+# Remove things from a list
+shopping_list.remove("Soda")
+print(shopping_list)
+shopping_list.pop(0)
+print(shopping_list)
+
+# The string Class
+
+import string
+print(string.ascii_letters)
+print(string.ascii_lowercase)
+print(string.punctuation)
+print(string.digits)
+
+# Dealing with strings
+strTwo = "tHIs iS a vEry ODd seNTeNce"
+lowercase = strTwo.lower()
+print(lowercase)
