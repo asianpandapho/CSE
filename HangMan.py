@@ -10,29 +10,25 @@ A general guide for Hangman
 5.Create the win condition
 
 """
-
-list1 = ["Yasuo", "Death is like the wind, always by my side", "Katarina", "Graves", "One blade, one purpose",
-         "Make it quick", "No cure for fools", "Sorye ge ton", "Face The Wind", "Hasagi"]
-guesses = 15
+list1 = ["Yasuo", "Rengar", "Katarina", "Graves", "Zed", "Akali", "Zoe", "Fizz", "Fiora", "Hasagi"]
+guesses = 10
 letters = string.ascii_uppercase
+word = (random.choice(list1))
+print(word)
+end = "What do you think it is?"
+print("Lets play Hangman, you have 10 guesses, what am I thinking?")
 
-#    ____
-#   |    |
-#   |    O
-#   |   /|\
-#   |    |
-#   |   / \
-#  _|_
-# |   |______
-# |          |
-# |__________|
-
-for item in list1:
-    print(item)
-
-while guesses >= 0:
+while guesses > 0:
     guesses -= 1
-    print(list1[random.choice(1, 10)])
+    print(guesses)
+    start = input("These are your letters, %s" % letters)
+    print(start)
+    if end == word:
+        print(word)
+        print("You Win! XD")
+        if letters != string.ascii_uppercase:
+            letters = string.ascii_uppercase
+
 
 
 # Anou Her
