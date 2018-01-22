@@ -1,3 +1,4 @@
+import random
 import string
 """
 
@@ -14,6 +15,7 @@ list1 = ["Yasuo", "Death is like the wind, always by my side", "Katarina", "Grav
          "Make it quick", "No cure for fools", "Sorye ge ton", "Face The Wind", "Hasagi"]
 guesses = 15
 letters = string.ascii_uppercase
+
 #    ____
 #   |    |
 #   |    O
@@ -25,12 +27,12 @@ letters = string.ascii_uppercase
 # |          |
 # |__________|
 
+for item in list1:
+    print(item)
+
 while guesses >= 0:
     guesses -= 1
-    listOne = list(list1)
-    print(listOne)
-    
-
+    print(list1[random.choice(1, 10)])
 
 
 # Anou Her
