@@ -16,7 +16,7 @@ list2 = list(string.ascii_uppercase)
 word = (random.choice(list1))
 print(word)
 print("Lets play Hangman, you have 10 guesses, what am I thinking?")
-already_guessed = []
+letters_guessed = []
 right_guesses = []
 
 while guesses > 0:
@@ -25,16 +25,18 @@ while guesses > 0:
     print("These are your letters, %s" % list2)
     ask_for_letter = input("Name a letter")
     high = ask_for_letter.upper()
-    already_guessed.append(high)
-    print(already_guessed)
+    letters_guessed.append(high)
+    if high in list2:
+        list2.remove(high)
+    if list2 in word:
+        right_guesses.append(high)
+        print(right_guesses)
+        if str(list2) in word is True:
+            guesses + 1
 
-    if ask_for_letter == list2 in word:
-        right_guesses.append(list2)
 
-
-
-    # if end == "no":
-    #     print("Ok")
+    # if righ_guesses == word:
+    #     print("YOU WIN XD")
     #
     #     if end == "Yes":
     #         print(answer)
@@ -42,9 +44,6 @@ while guesses > 0:
             print(word)
             print("You Win! XD")
 
-    # if str(list2) in word is True:
-    #     guesses + 1
-    #
     #     if already_guessed != string.ascii_uppercase:
     #          = string.ascii_uppercase
     #
