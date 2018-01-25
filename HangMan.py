@@ -10,29 +10,29 @@ A general guide for Hangman
 5.Create the win condition
 
 """
-list1 = ["YASUO", "RENGAR", "KATARINA", "GRAVES", "ZED", "AKALI", "ZOE", "FIZZ", "FIORA", "HASAGI"]
+word_bank = ["YASUO", "RENGAR", "KATARINA", "GRAVES", "ZED", "AKALI", "ZOE", "FIZZ", "FIORA", "HASAGI"]
 guesses = 10
-list2 = list(string.ascii_uppercase)
-word = (random.choice(list1))
-print(word)
+alphabet = list(string.ascii_uppercase)
+random_word = random.choice(word_bank)
+print(random_word)
 print("Lets play Hangman, you have 10 guesses, what am I thinking?")
 letters_guessed = []
-right_guesses = []
 
 while guesses > 0:
     guesses -= 1
     print(guesses)
-    print("These are your letters, %s" % list2)
+    print("These are your letters, %s" % alphabet)
     ask_for_letter = input("Name a letter")
-    high = ask_for_letter.upper()
-    letters_guessed.append(high)
-    if high in list2:
-        list2.remove(high)
-    if list2 in word:
-        right_guesses.append(high)
-        print(right_guesses)
-        if str(list2) in word is True:
-            guesses + 1
+    uppercase_guess = ask_for_letter.upper()
+    letters_guessed.append(uppercase_guess)
+    if uppercase_guess in alphabet:
+        alphabet.remove(uppercase_guess)
+    for letter in random_word:
+        if uppercase_guess in random_word:
+            letters_guessed.append(uppercase_guess)
+            print(letters_guessed)
+    if str(alphabet) in random_word is True:
+        guesses + 1
 
 
     # if righ_guesses == word:
@@ -40,9 +40,9 @@ while guesses > 0:
     #
     #     if end == "Yes":
     #         print(answer)
-        if right_guesses == word:
-            print(word)
-            print("You Win! XD")
+    if letters_guessed == random_word:
+        print(random_word)
+        print("You Win XD!")
 
     #     if already_guessed != string.ascii_uppercase:
     #          = string.ascii_uppercase
