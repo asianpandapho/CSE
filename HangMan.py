@@ -15,7 +15,6 @@ guesses = 10
 alphabet = list(string.ascii_uppercase)
 random_word = random.choice(word_bank)
 correct = list(random_word)
-print(random_word)
 print("Lets play Hangman, you have 10 guesses, what am I thinking?")
 letters_guessed = []
 
@@ -30,15 +29,15 @@ while guesses > 0:
     print(output)
     guesses -= 1
     if output == correct:
-        print("You Win")
+        print("You Win Good Job XD!")
         exit(0)
-    print("These are your letters, %s" % alphabet)
+    print("These are your letters you can guess :), %s" % alphabet)
     ask_for_letter = input("Name a letter")
     uppercase_guess = ask_for_letter.upper()
     letters_guessed.append(uppercase_guess)
     if uppercase_guess in alphabet:
         alphabet.remove(uppercase_guess)
     if guesses == 0:
-        print("You Lose the word was %s" % random_word)
+        print("You Lose The Word Was %s" % random_word)
 
 # Anou Her
