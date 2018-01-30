@@ -40,6 +40,7 @@ while guesses > 0:
             output.append("*")
     print(output)
     guesses -= 1
+    print(guesses)
     if output == correct:
         print("You Win Good Job XD!")
         exit(0)
