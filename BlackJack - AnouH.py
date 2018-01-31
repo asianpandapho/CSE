@@ -1,5 +1,9 @@
 import random
 
+string_numbers = ["Ace", "Kings", "Queen", "Jack", "Ten", "Nine", "Eight", "Seven", "Six", "Five", "Four", "Three",
+                  "Two", "One"]
+suits = ["Hearts", "Spades", "Clovers", "Diamonds"]
+
 random.randint(1, 11)
 
 King = 10
@@ -15,7 +19,8 @@ Five = 5
 Four = 4
 Three = 3
 Two = 2
-One = 1
+
+
 
 
 # Anou Her

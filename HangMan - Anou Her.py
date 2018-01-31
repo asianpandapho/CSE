@@ -22,7 +22,7 @@ word_bank = ["aatrox", "ahri", "akali", "alistar", "amumu", "anivia", "annie", "
         "shyvana", "singed", "sion", "sivir", "skarner", "sona", "soraka", "swain", "syndra", "tahmkench", "taliyah",
         "talon", "taric", "teemo", "thresh", "tristana", "trundle", "tryndamere", "twistedfate", "twitch", "udyr",
         "urgot", "varus", "vayne", "veigar", "velkoz", "vi", "viktor", "vladimir", "volibear", "warwick", "wukong",
-        "xayah", "yasuo", "yorick", "zac", "zed", "ziggs", "zilean", "zoe", "zyra"]
+        "xayah", "xinzhao", "yasuo", "yorick", "zac", "zed", "ziggs", "zilean", "zoe", "zyra"]
 guesses = 10
 alphabet = list(string.ascii_lowercase)
 random_word = random.choice(word_bank)
