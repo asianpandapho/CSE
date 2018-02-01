@@ -126,55 +126,122 @@
 # print(int(c) == 1)  # True - Compares two ints
 # print(c == str(1))  # True - Compares two strings
 
-the_count = [1, 2, 3, 4, 5]
-shopping_list = ["Noodles", "Eggrolls", "Milk", "Rice", "Soda", "Chips"]
+# the_count = [1, 2, 3, 4, 5]
+# shopping_list = ["Noodles", "Eggrolls", "Milk", "Rice", "Soda", "Chips"]
+#
+# print(len(shopping_list))
+#
+# # Going through a list
+# for item in shopping_list:
+#     print(item)
+#
+# for num in the_count:
+#     print(num ** 2)
+#
+# len(shopping_list)  # Gives me the length of the list XD
+# range(3)  # Gives a list of the numbers 0 through 2
+# range(len(shopping_list))  # A list of EVERY index in a list
+#
+# for num in range(len(shopping_list)):
+#     item = shopping_list[num]
+#     print("The item at index %d is %s" % (num, item))
+#
+# # Turn things into a list
+# str1 = "Hello Class!"
+# listOne = list(str1)
+# print(listOne)
+# listOne[11] = "."
+# print(listOne)
+# newStr = ("■".join(listOne))
+# print(newStr)
+#
+#
+# # Add things to a list
+# shopping_list.append("Cereal")
+# print(shopping_list)
+#
+# # Remove things from a list
+# shopping_list.remove("Soda")
+# print(shopping_list)
+# shopping_list.pop(0)
+# print(shopping_list)
+#
+# # The string Class
+#
+# import string
+# print(string.ascii_letters)
+# print(string.ascii_lowercase)
+# print(string.punctuation)
+# print(string.digits)
+#
+# # Dealing with strings
+# strTwo = "tHIs iS a vEry ODd seNTeNce"
+# lowercase = strTwo.lower()
+# print(lowercase)
 
-print(len(shopping_list))
+# Dictionaries - Make up a key value pair
+dictionary = {"name": "lance", "age": "18", "height": 6 * 12 + 2}
 
-# Going through a list
-for item in shopping_list:
-    print(item)
+# Processing from a dictionary
+print(dictionary['name'])
+print(dictionary['age'])
+print(dictionary["height"])
 
-for num in the_count:
-    print(num ** 2)
+large_dictionary = {
+    'California': 'CA',
+    "Minnesota": 'MI',
+    'Florida': "FL",
+    'Illinois': 'IL'
+}
+larger_dictionary = {
+    'California': [
+        "Fresno",
+        "Sacramento",
+        "Orange County"
+    ],
 
-len(shopping_list)  # Gives me the length of the list XD
-range(3)  # Gives a list of the numbers 0 through 2
-range(len(shopping_list))  # A list of EVERY index in a list
-
-for num in range(len(shopping_list)):
-    item = shopping_list[num]
-    print("The item at index %d is %s" % (num, item))
-
-# Turn things into a list
-str1 = "Hello Class!"
-listOne = list(str1)
-print(listOne)
-listOne[11] = "."
-print(listOne)
-newStr = ("■".join(listOne))
-print(newStr)
-
-
-# Add things to a list
-shopping_list.append("Cereal")
-print(shopping_list)
-
-# Remove things from a list
-shopping_list.remove("Soda")
-print(shopping_list)
-shopping_list.pop(0)
-print(shopping_list)
-
-# The string Class
-
-import string
-print(string.ascii_letters)
-print(string.ascii_lowercase)
-print(string.punctuation)
-print(string.digits)
-
-# Dealing with strings
-strTwo = "tHIs iS a vEry ODd seNTeNce"
-lowercase = strTwo.lower()
-print(lowercase)
+    "Washington": [
+        "Seattle",
+        "Tacoma",
+        "Olympia",
+        "Spokane"
+    ],
+    'Illinois': [
+        "Chicago",
+        "Naperville",
+        "Peora"
+    ],
+    "Florida": [
+        "Miami",
+        "Town"
+        "Another town in Florida"
+        ]
+}
+print(large_dictionary['Florida'])
+print(larger_dictionary["Illinois"][0])
+print(larger_dictionary['Washington'][3])
+# Spokane
+largest_dictionary = {
+    "CA": {
+        'NAME': "California",
+        "POPULATION": 3925000,
+        'BORDER ST':  [
+            'OREGON',
+            'NEVADA',
+            'ARIZONA'
+        ],
+    },
+    "MI": {
+        'NAME': "Michigan",
+        "POPULATION": 9928000,
+        'BORDER ST': [
+            'Wisconsin',
+            'Ohio',
+            'Indiana'
+        ],
+    'FL':{
+        "NAME": "Florida"
+    }
+    }
+}
+print(largest_dictionary["MI"]["BORDER ST"][2])
