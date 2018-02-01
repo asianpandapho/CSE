@@ -15,7 +15,7 @@ word_bank = ["aatrox", "ahri", "akali", "alistar", "amumu", "anivia", "annie", "
         "drmundo", "draven", "ekko", "elise", "evelynn", "ezreal", "fiddlesticks", "fiora", "fizz", "galio",
         "gangplank", "garen", "gnar", "gragas", "graves", "hecarim", "heimerdinger", "illaoi", "irelia", "ivern",
         "janna", "jarvaniv", "jax", "jayce", "jinx", "kalista", "karma", "karthus", "kassadin", "katarina", "kayle",
-        "kayne", "kennen", "khazix", "kindred", "kled", "kogmaw", "leblanc", "leesin", "leona", "lissandra", "lucian",
+        "kayn", "kennen", "khazix", "kindred", "kled", "kogmaw", "leblanc", "leesin", "leona", "lissandra", "lucian",
         "lulu", "lux", "malphite", "malzahar", "maokai", "masteryi", "missfortune", "mordekaiser", "morgana", "nami",
         "nasus", "nautilus", "nidalee", "nocturne", "nunu", "olaf", "orianna", "ornn", "pantheon", "poppy", "quinn",
         "rakan", "rammus", "reksai", "renekton", "rengar", "riven", "rumble", "ryze", "sejuani", "shaco", "shen",
@@ -23,7 +23,7 @@ word_bank = ["aatrox", "ahri", "akali", "alistar", "amumu", "anivia", "annie", "
         "talon", "taric", "teemo", "thresh", "tristana", "trundle", "tryndamere", "twistedfate", "twitch", "udyr",
         "urgot", "varus", "vayne", "veigar", "velkoz", "vi", "viktor", "vladimir", "volibear", "warwick", "wukong",
         "xayah", "xinzhao", "yasuo", "yorick", "zac", "zed", "ziggs", "zilean", "zoe", "zyra"]
-guesses = 10
+guesses = 11
 alphabet = list(string.ascii_lowercase)
 random_word = random.choice(word_bank)
 correct = list(random_word)

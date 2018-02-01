@@ -20,6 +20,9 @@ Four = 4
 Three = 3
 Two = 2
 
+money = 25
+
+while money >= 0:
 
 
 
