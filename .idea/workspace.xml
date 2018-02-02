@@ -15,33 +15,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="notes.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="notes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="245" column="1" lean-forward="true" selection-start-line="244" selection-start-column="5" selection-end-line="245" selection-end-column="1" />
+            <state relative-caret-position="434">
+              <caret line="241" column="0" lean-forward="false" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HangMan - Anou Her.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HangMan - Anou Her.py">
+      <file leaf-file-name="Dictionay World Map - Anou Her.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Dictionay World Map - Anou Her.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="46" column="15" lean-forward="false" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlackJack - AnouH.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BlackJack - AnouH.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="343">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,6 +65,7 @@
         <option value="$PROJECT_DIR$/BlackJack - AnouH.py" />
         <option value="$PROJECT_DIR$/HangMan - Anou Her.py" />
         <option value="$PROJECT_DIR$/notes.py" />
+        <option value="$PROJECT_DIR$/Dictionay World Map - Anou Her.py" />
       </list>
     </option>
   </component>
@@ -112,13 +101,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -137,7 +126,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.notes">
+  <component name="RunManager" selected="Python.Dictionay World Map - Anou Her">
     <configuration name="BlackJack - AnouH" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -155,7 +144,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Guess Game" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Dictionay World Map - Anou Her" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -167,7 +156,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Guess Game.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dictionay World Map - Anou Her.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -225,18 +214,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.notes" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Guess Game" />
-      <item index="2" class="java.lang.String" itemvalue="Python.HangMan" />
-      <item index="3" class="java.lang.String" itemvalue="Python.HangMan - Anou Her" />
-      <item index="4" class="java.lang.String" itemvalue="Python.BlackJack - AnouH" />
+      <item index="1" class="java.lang.String" itemvalue="Python.HangMan" />
+      <item index="2" class="java.lang.String" itemvalue="Python.HangMan - Anou Her" />
+      <item index="3" class="java.lang.String" itemvalue="Python.BlackJack - AnouH" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Dictionay World Map - Anou Her" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.notes" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Dictionay World Map - Anou Her" />
         <item index="1" class="java.lang.String" itemvalue="Python.HangMan - Anou Her" />
-        <item index="2" class="java.lang.String" itemvalue="Python.BlackJack - AnouH" />
-        <item index="3" class="java.lang.String" itemvalue="Python.HangMan" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Guess Game" />
+        <item index="2" class="java.lang.String" itemvalue="Python.notes" />
+        <item index="3" class="java.lang.String" itemvalue="Python.BlackJack - AnouH" />
+        <item index="4" class="java.lang.String" itemvalue="Python.HangMan" />
       </list>
     </recent_temporary>
   </component>
@@ -262,10 +251,10 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33450705" sideWeight="0.5063197" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29952458" sideWeight="0.1068814" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29952458" sideWeight="0.4936803" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29952458" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -310,13 +299,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Lucky7's Anou Her.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Guess Game Anou Her.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -614,9 +596,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/notes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="241" column="0" lean-forward="false" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HangMan - Anou Her.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state relative-caret-position="105">
           <caret line="46" column="15" lean-forward="false" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -624,10 +614,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes.py">
+    <entry file="file://$PROJECT_DIR$/Dictionay World Map - Anou Her.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="245" column="1" lean-forward="true" selection-start-line="244" selection-start-column="5" selection-end-line="245" selection-end-column="1" />
+        <state relative-caret-position="343">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>

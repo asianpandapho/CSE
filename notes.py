@@ -239,9 +239,20 @@ largest_dictionary = {
             'Ohio',
             'Indiana'
         ],
+
     'FL':{
-        "NAME": "Florida"
+        "NAME": "Florida",
+        "POPULATION": 20610000,
+        "Border ST": [
+            "Georgia",
+            "Alabama"
+
+        ]
     }
     }
 }
-print(largest_dictionary["MI"]["BORDER ST"][2])
+
+print(largest_dictionary["FL"]["Border ST"][1])
+print(largest_dictionary["MI"]["BORDER ST"])
+
+
