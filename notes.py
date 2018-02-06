@@ -193,6 +193,11 @@ large_dictionary = {
     'Florida': "FL",
     'Illinois': 'IL'
 }
+
+# Adding to a dictionary
+dictionary["weight"] = 290
+print(dictionary)
+
 larger_dictionary = {
     'California': [
         "Fresno",
@@ -222,37 +227,39 @@ print(larger_dictionary["Illinois"][0])
 print(larger_dictionary['Washington'][3])
 # Spokane
 largest_dictionary = {
-    "CA": {
-        'NAME': "California",
-        "POPULATION": 3925000,
-        'BORDER ST':  [
-            'OREGON',
-            'NEVADA',
-            'ARIZONA'
-        ],
-    },
-    "MI": {
-        'NAME': "Michigan",
-        "POPULATION": 9928000,
+    'CA': {
+        'NAME': 'California',
+        'POPULATION': 39250000,
         'BORDER ST': [
-            'Wisconsin',
-            'Ohio',
-            'Indiana'
-        ],
-
-    'FL':{
-        "NAME": "Florida",
-        "POPULATION": 20610000,
-        "Border ST": [
-            "Georgia",
-            "Alabama"
-
+            'Oregon',
+            'Nevada',
+            'Arizona'
+        ]
+    },
+    'AZ': {
+        'NAME': 'Arizona',
+        'POPULATION': 6931000,
+        'BORDER ST': [
+            'California',
+            'Utah',
+            'Nevada',
+            'New Mexico'
+        ]
+    },
+    'NY': {
+        'NAME': "New York",
+        'POPULATION': 19750000,
+        'BORDER ST': [
+            'Vermont',
+            'Massachusetts',
+            'Connecticut',
+            'Pennsylvania',
+            'New Jersey'
         ]
     }
-    }
 }
-
-print(largest_dictionary["FL"]["Border ST"][1])
-print(largest_dictionary["MI"]["BORDER ST"])
-
+current_node = largest_dictionary['CA']
+print(current_node)
+print(current_node["NAME"])
+print(current_node["POPULATION"])
 
