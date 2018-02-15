@@ -95,7 +95,7 @@ world_map = {
     },
     'MEGA': {
         'NAME': 'MEGALODON CAGE',
-        'DESCRIPTION': 'You arrive at the Megalodon Waters and see 1 huge shark in the water,\n'
+        'DESCRIPTION': 'You arrive at Megalodon Waters and see 1 huge shark in the water,\n'
                        'it looks like it can jump out at you at any second,\n'
                        'but it remains calm for now just don\t drop blood into the water'
                        'there are paths East and Northeast',
@@ -106,7 +106,8 @@ world_map = {
     },
     'T REX': {
         'NAME': 'TYRANNOSAURUS CAGE',
-        'DESCRIPTION': 'You arrive at the Tyrannosaurus Rex Cage, there you see the king of dinosaurs,\n'
+        'DESCRIPTION': 'You arrive at the Tyrannosaurus Jungle, there you see the king of dinosaurs,\n'
+                       'it can be tranquilized with 3 tranq bullets,\n'
                        ' there are paths North and West',
         'PATHS': {
             'W': 'STEGO',
@@ -115,17 +116,19 @@ world_map = {
     },
     'STEGO': {
         'NAME': 'STEGOSAURUS CAGE',
-        'DESCRIPTION': 'You arrive at the Stegosaurus Cage, you see the stegosaurus drinking water,\n'
+        'DESCRIPTION': 'You arrive at Stegosaurus Acres, you see the stegosaurus drinking water,\n'
+                       'you might need to befriend it later\n'
                        ' there are paths North and East',
         'PATHS': {
             'E': 'T REX',
-            'N': ''
+            'N': 'PTER'
         }
     },
     'I REX': {
         'NAME': 'INDOMINOUS REX CAGE',
-        'DESCRIPTION': 'You arrive at the Indominous Rex Cage, you cant see anything but trees,\n'
-                       ' however you feel a presence, there are paths Northwest and West',
+        'DESCRIPTION': 'You arrive at Indominous Rex Swamp, you cant see anything but trees,\n'
+                       ' however you feel a presence someone told you that the I Rex can be tranquilized by 5 darts\n'
+                       ', there are paths Northwest and West',
         'PATHS': {
             'W': 'PTER',
             'NW': 'COPTER'
@@ -133,7 +136,8 @@ world_map = {
     },
     'PTER': {
         'NAME': 'PTERODACTYL CAGE',
-        'DESCRIPTION': 'You arrive at the Pterodactyl Cage, you see them fly in the sky,\n'
+        'DESCRIPTION': 'You arrive at Pterodactyl City, you see them fly in the sky,\n'
+                       'it looks like they can just swoop down an grab you off the ground, a flare can scare them off\n'
                        ' there are paths Northeast and East',
         'PATHS': {
             'E': 'I REX',
@@ -167,5 +171,8 @@ while True:
             print('You cannot go this way')
     else:
         print('command not Recognized')
+    if current_node == world_map["COPTER"]:
+        print('You arrive at the Helipad, you get onto the helicopter and leave the Island. GOOD JOB!')
+        exit(0)
 
 # Anou Her
