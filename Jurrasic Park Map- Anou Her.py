@@ -1,8 +1,7 @@
 world_map = {
     'AIRPLANE': {
-        'NAME': 'AIRPLANE LENDING AREA',
-        'DESCRIPTION': 'You are in the airplane landing area, you can only go north to go to the gate.\n'
-                       'Use N,S,W,E, NE, NW, SE, SW to move.',
+        'NAME': 'AIRPLANE LANDING AREA',
+        'DESCRIPTION': 'You are in the airplane landing area, you can only go North to go to the gate.',
         'PATHS': {
             'N': 'GATE'
         }
@@ -24,21 +23,26 @@ world_map = {
     'LAB': {
         'NAME': 'LABORATORY',
         'DESCRIPTION': 'You go to the Laboratory and look at how the genetically modify dinosaurs\n'
-                       ' conveniently there is a button with the marking DANGER! on it, there is a path Northeast',
+                       'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
+                       'the tranquilizer has 5 bullets in it while the flare has 3, however you can only take 1\n'
+                       ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast',
         'PATHS': {
             'NE': 'TRI',
         }
     },
     'VISIT': {
         'NAME': 'VISITOR CENTER',
-        'DESCRIPTION': 'You are at the Visitor Center here visitors can buy items, there is a path Northwest,',
+        'DESCRIPTION': 'You are at the Visitor Center here visitors can buy items,\n'
+                       'like Odor Away, a net, and bug spray, and a custom Jurrasic Park lighter\n'
+                       ' there is a path Northwest,',
         'PATHS': {
             'NW': 'VELO',
         }
     },
     'VELO': {
         'NAME': 'VELOCIRAPTOR CAGE',
-        'DESCRIPTION': 'You arrive at the Velociraptor Cage where you see 4 Velociraptors running around and jumping.\n'
+        'DESCRIPTION': 'You arrive at Velociraptor Valley where you see 4 Velociraptors running around and jumping.\n'
+                       'They have one huge claw on both of their feet, and they are scared of flares.'
                        ' There are paths Northeast, North, and West',
         'PATHS': {
             'NE': 'DILOPH',
@@ -48,7 +52,9 @@ world_map = {
     },
     'TRI': {
         'NAME': 'TRICERATOPS CAGE',
-        'DESCRIPTION': 'You arrive at the Triceratops Cage, there is a Triceratops munching on some leaves,\n'
+        'DESCRIPTION': 'You arrive at Triceratops Track , there is a Triceratops munching on some leaves,\n'
+                       'it looks pretty friendly however you should not get close to it,\n'
+                       '(I feel you can ride it though)'
                        ' there are paths Northwest, East, and North',
         'PATHS': {
             'NW': 'MEGA',
@@ -58,7 +64,7 @@ world_map = {
     },
     'BRACHIO': {
         'NAME': 'BRACHIOSAURUS CAGE',
-        'DESCRIPTION': 'You arrive at the Brachiosaurus Cage, you see huge dinosaurs walking around and eating from\n'
+        'DESCRIPTION': 'You arrive at Brachiosaurus Bridge, you see huge dinosaurs walking around and eating from\n'
                        ' massive trees, there are paths West, East, and North',
         'PATHS': {
             'W': 'MEGA',
@@ -68,7 +74,8 @@ world_map = {
     },
     'SPINO': {
         'NAME': 'SPINOSAURUS CAGE',
-        'DESCRIPTION': 'You arrive at the Spinosaurus Cage and see a huge Spinosaurus, it look very hungry,\n'
+        'DESCRIPTION': 'You arrive at Spinosaurus Station and see a huge Spinosaurus, it look very hungry,\n'
+                       'you don\'t want to mess with it, however 2 trang bullets will make it unconscious'
                        ' there are paths East, North, and West',
         'PATHS': {
             'W': 'BRACHIO',
@@ -78,8 +85,9 @@ world_map = {
     },
     'DILOPH': {
         'NAME': 'DILOPHOSAURUS CAGE',
-        'DESCRIPTION': 'You arrive at the Dilophosaurus Cage and see 4 Dilophosaurus fighting,\n'
-                       'and they look very hungry, there are paths West and Northwest',
+        'DESCRIPTION': 'You arrive at Dilophosaurus Dungeon and see 4 Dilophosaurus fighting,\n'
+                       'and they look very hungry, they can all be scared off by a flare if you shoot it properly\n'
+                       'there are paths West and Northwest',
         'PATHS': {
             'W': 'SPINO',
             'NW': 'T REX'
@@ -87,8 +95,10 @@ world_map = {
     },
     'MEGA': {
         'NAME': 'MEGALODON CAGE',
-        'DESCRIPTION': 'You arrive at the Dilophosaurus Cage and see 4 Dilophosaurus fighting,\n'
-                       'and they look very hungry, there are paths East and Northeast',
+        'DESCRIPTION': 'You arrive at the Megalodon Waters and see 1 huge shark in the water,\n'
+                       'it looks like it can jump out at you at any second,\n'
+                       'but it remains calm for now just don\t drop blood into the water'
+                       'there are paths East and Northeast',
         'PATHS': {
             'E': 'BRACHIO',
             'NE': 'STEGO'
@@ -138,13 +148,17 @@ world_map = {
 
 current_node = world_map["AIRPLANE"]
 directions = ['N', 'E', 'S', 'W', 'NE', 'NW', 'SE', 'SW']
+long_directions = ['NORTH', 'EAST', 'SOUTH', 'WEST', 'NORTHEAST', 'NORTHWEST', 'SOUTHEAST', 'SOUTHWEST']
 
 while True:
     print(current_node["NAME"])
     print(current_node["DESCRIPTION"])
-    command = input('>_')
-    if command == 'quit':
+    command = input('>_').upper()
+    if command == 'QUIT':
         quit(0)
+    if command in long_directions:
+        index = long_directions.index(command)
+        command = directions[index]
     if command in directions:
         try:
             name_of_node = current_node['PATHS'][command]
