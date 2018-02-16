@@ -154,6 +154,13 @@ current_node = world_map["AIRPLANE"]
 directions = ['N', 'E', 'S', 'W', 'NE', 'NW', 'SE', 'SW']
 long_directions = ['NORTH', 'EAST', 'SOUTH', 'WEST', 'NORTHEAST', 'NORTHWEST', 'SOUTHEAST', 'SOUTHWEST']
 
+inventory = ['SCREWDRIVER', 'FLASHLIGHT', ]
+item1 = "TRANQUILIZER"
+item2 = "FLARE GUN"
+item3 = 'ODOR AWAY'
+item4 = 'LIGHTER'
+
+
 while True:
     print(current_node["NAME"])
     print(current_node["DESCRIPTION"])
