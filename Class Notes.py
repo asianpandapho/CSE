@@ -41,6 +41,7 @@ class Car(object):
         self.model = model
         self.horsepower = horsepower
         self.running = running
+    # Hai
 
     def drive(self):
         self.used = True
