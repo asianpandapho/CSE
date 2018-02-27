@@ -1,4 +1,4 @@
-# # Defining a class
+# # # Defining a class
 # class Shoes(object):
 #     def __init__(self, lace_color, lighting, brand):  # TWO underscores before and after
 #         # Things a shoe has
@@ -16,7 +16,6 @@
 #     def wash(self):
 #         self.clean = True
 #         print("You cleaned the shoes")
-#
 #
 # first_pair = Shoes("Red", "True", "Sketchers")
 # second_pair = Shoes("Blue", "True", "Reebok")
