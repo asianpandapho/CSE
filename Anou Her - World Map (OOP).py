@@ -120,35 +120,33 @@ copter = Room('HELIPAD\n',
               'You arrive at the Helipad, you get onto the helicopter and leave the Island.\n',
               None, None, None, None, None, None, None, None,)
 
-current_node = Room("airplane", None, None, None, None, None, None, None, None, None,)
+current_node = airplane
 directions = ['n', 'e', 's', 'w', 'ne', 'nw', 'se', 'sw']
 long_directions = ['north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']
 
-inventory = ['SCREWDRIVER', 'FLASHLIGHT', ]
-item1 = "TRANQUILIZER"
-item2 = "FLARE GUN"
-item3 = 'ODOR AWAY'
-item4 = "LIGHTER"
+inventory = ['screwdriver', 'flashlight', ]
+item1 = "tranquilizer"
+item2 = "flare gun"
+item3 = 'odor away'
+item4 = 'lighter'
 
 while True:
-    print(current_node["NAME"])
-    print(current_node["DESCRIPTION"])
+    print(current_node.name)
+    print(current_node.description)
     command = input('>_').lower()
-    if command == 'QUIT':
+    if command == 'quit':
         quit(0)
     if command in long_directions:
         index = long_directions.index(command)
         command = directions[index]
     if command in directions:
         try:
-            name_of_node = current_node['PATHS'][command]
-            current_node = world_map[name_of_node]
+            name_of_node = current_node.move(directions)
+            current_node = name_of_node
         except KeyError:
             print('You cannot go this way')
     else:
         print('command not Recognized')
-    if current_node == world_map["COPTER"]:
+    if current_node == copter:
         print('You arrive at the Helipad, you get onto the helicopter and leave the Island. GOOD JOB!')
         exit(0)
-
-
