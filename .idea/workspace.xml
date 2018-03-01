@@ -18,8 +18,8 @@
       <file leaf-file-name="Jurrasic Park Map- Anou Her.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Jurrasic Park Map- Anou Her.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="182" column="15" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="182" selection-end-column="15" />
+            <state relative-caret-position="3094">
+              <caret line="182" column="15" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="182" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -28,8 +28,8 @@
       <file leaf-file-name="Anou Her - World Map (OOP).py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Anou Her - World Map (OOP).py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="140" column="35" lean-forward="true" selection-start-line="140" selection-start-column="35" selection-end-line="140" selection-end-column="35" />
+            <state relative-caret-position="2414">
+              <caret line="142" column="28" lean-forward="false" selection-start-line="142" selection-start-column="28" selection-end-line="142" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -38,7 +38,7 @@
       <file leaf-file-name="Class Notes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Class Notes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-24">
+            <state relative-caret-position="-760">
               <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
               <folding />
             </state>
@@ -63,6 +63,8 @@
       <find>STEGO</find>
       <find>T_REX</find>
       <find>SAURUS CAGE</find>
+      <find>'You can\'t go there\n'</find>
+      <find>dil</find>
     </findStrings>
     <replaceStrings>
       <replace>T_REX</replace>
@@ -70,6 +72,7 @@
       <replace>stego</replace>
       <replace>t_rex</replace>
       <replace>saurus cage</replace>
+      <replace>None</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -284,7 +287,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29952458" sideWeight="0.1068814" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29952458" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29952458" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -593,15 +596,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Jurrasic Park Map- Anou Her.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="182" column="15" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="182" selection-end-column="15" />
+        <state relative-caret-position="3094">
+          <caret line="182" column="15" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="182" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Class Notes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
+        <state relative-caret-position="-760">
           <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding />
         </state>
@@ -609,8 +612,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Anou Her - World Map (OOP).py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="140" column="35" lean-forward="true" selection-start-line="140" selection-start-column="35" selection-end-line="140" selection-end-column="35" />
+        <state relative-caret-position="2414">
+          <caret line="142" column="28" lean-forward="false" selection-start-line="142" selection-start-column="28" selection-end-line="142" selection-end-column="28" />
           <folding />
         </state>
       </provider>
