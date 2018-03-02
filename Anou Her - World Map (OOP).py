@@ -55,7 +55,8 @@ velo = Room("Velociraptor Cage\n",
 tri = Room('Triceratops Cage\n',
            'You arrive at Triceratops Track , there is a Triceratops munching on some leaves,\n'
            'it looks pretty friendly however you should not get close to it,\n'
-           '(I feel you can ride it though\n)'
+           '(I feel you can ride it though)\nnn'
+           ''
            ' there are paths Northwest, East, and North\n',
            'brachio', None, None, 'velo', None, 'mega', None, None)
 
@@ -80,24 +81,22 @@ diloph = Room('Dilophasaurus Cage\n',
 mega = Room('Megalodon Cage\n',
             'You arrive at Megalodon Waters and see 1 huge shark in the water,\n'
             'it looks like it can jump out at you at any second,\n'
-            'but it remains calm for now just don\t drop blood into the water\n'
+            'but it remains calm for now just don\'t drop blood into the water\n'
             'there are paths East and Northeast\n',
-            None, None, None, 'brachio', 'stego\n',
-            None, None, None)
+            None, None, None, 'brachio', 'stego', None, None, None)
 
 t_rex = Room('Tyrannosaurus Cage\n',
              'You arrive at the Tyrannosaurus Jungle, there you see the king of dinosaurs,\n'
              'it can be tranquilized with 3 tranq bullets,\n'
              ' there are paths North and West\n',
-             'I_REX', None, 'stego', None, None,
+             'i_rex', None, 'stego', None, None,
              None, None, None)
 
 stego = Room('Stegosaurus Cage\n',
              'You arrive at Stegosaurus Springs, you see the Stegosaurus drinking water,\n'
              'you might need to befriend it later\n'
              ' there are paths North and East\n',
-             'PTER', None, None, 't_rex', None,
-             None, None, None)
+             'pter', None, None, 't_rex', None, None, None, None)
 
 i_rex = Room('Indominous Rex Cage\n',
              'You arrive at Indominous Rex Swamp, you cant see anything but trees,\n'
@@ -106,12 +105,11 @@ i_rex = Room('Indominous Rex Cage\n',
              None, None, 'pter', None, None,
              'copter', None, None)
 
-pter = Room('PTERODACTYL CAGE\n'
+pter = Room('Pterodactyl Cage\n',
             'You arrive at Pterodactyl City, you see them fly in the sky,\n'
             'it looks like they can just swoop down an grab you off the ground, a flare can scare them off\n'
             ' there are paths Northeast and East\n',
-            None, None, None, "i_rex", 'copter\n',
-            None, None, None, None,)
+            None, None, None, "i_rex", 'copter', None, None, None)
 
 copter = Room('HELIPAD\n',
               'You arrive at the Helipad, you get onto the helicopter and leave the Island.\n',
