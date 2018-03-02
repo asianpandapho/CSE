@@ -41,5 +41,5 @@ def pythagorean(a, b):
     return answer
 
 
-print(distance(5, 12))
+print(pythagorean(5, 12))
 
