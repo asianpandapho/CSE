@@ -136,3 +136,15 @@ while True:
     if current_node == copter:
         print('You arrive at the Helipad, you get onto the helicopter and leave the Island. GOOD JOB!')
         exit(0)
+    # if current_node == lab:
+    #     print("What item will you choose? Spell item1 for tranqulizer and item2 for flare gun")
+    #     if command == "none":
+    #         print('You have to choose or else you cannot finish the game.')
+    #     if command == item1:
+    #        print('You chose the tranqulizer and now you can make dinosaurs go to sleep,however you only have 5 shots')
+    #         inventory.append(item1)
+    #     if command == item2:
+    #       print('You chose the flare gun and now you can make small dinosaurs run away,however you only have 3 shots')
+    #         inventory.append(item2)
+    # else:
+    #     print('command not Recognized')
