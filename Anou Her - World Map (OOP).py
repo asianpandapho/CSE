@@ -1,3 +1,6 @@
+import random
+
+
 class Room(object):
     def __init__(self, name, description, north, south, west, east, northeast, northwest, southeast, southwest):
         self.name = name
@@ -11,9 +14,41 @@ class Room(object):
         self.se = southeast
         self.sw = southwest
 
-    def move(self, direction):
-        global current_node
-        current_node = globals()[getattr(self, direction)]
+        def move(self, direction):
+            global current_node
+            current_node = globals()[getattr(self, direction)]
+
+
+class Characters(object):
+    def __init__(self, name, description, health, attack, block):
+        self.name = name
+        self.description = description
+        self.dead = False
+        self.health = health
+        self.attack = attack
+        self.enemy = False
+        self.block = block
+
+        def take_damage(self, amt):
+            self.health -= amt
+
+        def swing(self, target):
+            target.take_damage(self.attack)
+            print('%s attacks %s' % (self.name, target.name))
+            if target.health <= 0:
+                target.dead = True
+                print('%s died' % target.name)
+                exit(0)
+
+        def fight(self, enemy):
+            print('You engage in a fight with the %s' % bad.name)
+
+            while self.health != 0:
+                choice = random.choice([enemy, self])
+                if choice == self:
+                    enemy.swing(self)
+                elif choice == enemy:
+                    self.swing(enemy)
 
 
 # Initialize Rooms
@@ -136,6 +171,10 @@ while True:
     if current_node == copter:
         print('You arrive at the Helipad, you get onto the helicopter and leave the Island. GOOD JOB!')
         exit(0)
+
+    you = Characters('you', 'you are yourself', 3, 1, 1)
+    bad = Characters('dino', 'This is a bad guy', 3, 1, 1)
+
     # if current_node == lab:
     #     print("What item will you choose? Spell item1 for tranqulizer and item2 for flare gun")
     #     if command == "none":
