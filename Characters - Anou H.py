@@ -2,14 +2,13 @@ import random
 
 
 class Characters(object):
-    def __init__(self, name, description, health, attack, block):
+    def __init__(self, name, description, health, attack):
         self.name = name
         self.description = description
         self.dead = False
         self.health = health
         self.attack = attack
         self.enemy = False
-        self.block = block
 
     def take_damage(self, amt):
         self.health -= amt
@@ -25,6 +24,7 @@ class Characters(object):
     # Transfer to controller
     def fight(self, enemy):
         print('You engage in a fight with the %s' % bad.name)
+        print(bad.description)
 
         while self.health != 0:
             choice = random.choice([enemy, self])
@@ -43,7 +43,7 @@ class Characters(object):
             print('The %s blocked your attack' % enemy.name)
 
 
-you = Characters('you', 'you are yourself', 3, 1, 1)
-bad = Characters('dino', 'This is a bad guy', 3, 1, 1)
+you = Characters('you', 'you are yourself', 3, 1)
+bad = Characters('dino', 'This is a bad guy', 3, 1)
 
 you.fight(bad)
