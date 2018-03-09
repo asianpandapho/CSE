@@ -13,5 +13,7 @@ class Weapon(Item):
         self.damage = dmg
 
 
-axe = Weapon("Wiebe's Axe", 9001, 10000)
-print(axe.value)
+flare_gun = Weapon("Flare Gun", 90, 2)
+tranquilizer = Weapon("Tranquilizer Gun", 90, 1)
+print(tranquilizer.value)
+tranquilizer.sell()

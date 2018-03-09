@@ -14,9 +14,9 @@ class Room(object):
         self.se = southeast
         self.sw = southwest
 
-        def move(self, direction):
-            global current_node
-            current_node = globals()[getattr(self, direction)]
+    def move(self, direction):
+        global current_node
+        current_node = globals()[getattr(self, direction)]
 
 
 class Characters(object):
@@ -29,26 +29,48 @@ class Characters(object):
         self.enemy = False
         self.block = block
 
-        def take_damage(self, amt):
+    def take_damage(self, amt):
             self.health -= amt
 
-        def swing(self, target):
-            target.take_damage(self.attack)
-            print('%s attacks %s' % (self.name, target.name))
-            if target.health <= 0:
-                target.dead = True
-                print('%s died' % target.name)
-                exit(0)
+    def swing(self, target):
+        target.take_damage(self.attack)
+        print('%s attacks %s' % (self.name, target.name))
+        if target.health <= 0:
+            target.dead = True
+            print('%s died' % target.name)
+            exit(0)
 
-        def fight(self, enemy):
-            print('You engage in a fight with the %s' % bad.name)
+    def fight(self, enemy):
+        print('You engage in a fight with the %s' % bad.name)
 
-            while self.health != 0:
-                choice = random.choice([enemy, self])
-                if choice == self:
-                    enemy.swing(self)
-                elif choice == enemy:
-                    self.swing(enemy)
+        while self.health != 0:
+            choice = random.choice([enemy, self])
+            if choice == self:
+                enemy.swing(self)
+            elif choice == enemy:
+                self.swing(enemy)
+
+
+class Inventory(object):
+    def __init__(self, switch_out):
+        self.opened = False
+        self.switch_out = switch_out
+        self.closed = True
+
+
+class Item(object):
+    def __init__(self, name, value):
+        self.name = name
+        self.value = value
+
+    def sell(self):
+        print("You sell the %s for %d gold" % (self.name, self.value))
+
+
+class Weapon(Item):
+    def __init__(self, name, value, dmg):
+        super(Weapon, self).__init__(name, value)
+        self.damage = dmg
 
 
 # Initialize Rooms
