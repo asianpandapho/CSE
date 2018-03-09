@@ -15,31 +15,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="notes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3502">
+              <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Jurrasic Park Map- Anou Her.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Jurrasic Park Map- Anou Her.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3094">
-              <caret line="182" column="15" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="182" selection-end-column="15" />
+            <state relative-caret-position="2771">
+              <caret line="163" column="11" lean-forward="false" selection-start-line="163" selection-start-column="11" selection-end-line="163" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Anou Her - World Map (OOP).py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Anou Her - World Map (OOP).py">
+      <file leaf-file-name="Function Notes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Function Notes.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-1389">
               <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+=======
+            <state relative-caret-position="629">
+              <caret line="37" column="15" lean-forward="false" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+>>>>>>> 2b754e83ee75f205f0f3be69c5a6d5d46e2c7da4
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Class Notes.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Class Notes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Class Notes.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="136">
               <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="249">
+              <caret line="74" column="63" lean-forward="false" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+=======
+            <state relative-caret-position="239">
+              <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+>>>>>>> 061aa536180719f493e9d2ec75946dd9cca7514a
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dictionay World Map - Anou Her.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dictionay World Map - Anou Her.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+>>>>>>> 2b754e83ee75f205f0f3be69c5a6d5d46e2c7da4
               <folding />
             </state>
           </provider>
@@ -58,22 +93,7 @@
     <findStrings>
       <find>input</find>
       <find>correct</find>
-      <find>TREX</find>
-      <find>VISIT</find>
-      <find>STEGO</find>
-      <find>T_REX</find>
-      <find>SAURUS CAGE</find>
-      <find>'You can\'t go there\n'</find>
-      <find>dil</find>
     </findStrings>
-    <replaceStrings>
-      <replace>T_REX</replace>
-      <replace>visit</replace>
-      <replace>stego</replace>
-      <replace>t_rex</replace>
-      <replace>saurus cage</replace>
-      <replace>None</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,11 +111,9 @@
         <option value="$PROJECT_DIR$/HangMan - Anou Her.py" />
         <option value="$PROJECT_DIR$/Dictionay World Map - Anou Her.py" />
         <option value="$PROJECT_DIR$/notes.py" />
-        <option value="$PROJECT_DIR$/Function Notes.py" />
-        <option value="$PROJECT_DIR$/Anou Her Pythagorean Theorem.py" />
-        <option value="$PROJECT_DIR$/Class Notes.py" />
         <option value="$PROJECT_DIR$/Jurrasic Park Map- Anou Her.py" />
-        <option value="$PROJECT_DIR$/Anou Her - World Map (OOP).py" />
+        <option value="$PROJECT_DIR$/Function Notes.py" />
+        <option value="$PROJECT_DIR$/Class Notes.py" />
       </list>
     </option>
   </component>
@@ -119,6 +137,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -131,11 +150,18 @@
           <select />
         </subPane>
       </pane>
+=======
+      <pane id="ProjectPane" />
+>>>>>>> 2b754e83ee75f205f0f3be69c5a6d5d46e2c7da4
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> 061aa536180719f493e9d2ec75946dd9cca7514a
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -155,43 +181,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Anou Her - World Map (OOP)">
-    <configuration name="Anou Her - World Map (OOP)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Anou Her - World Map (OOP).py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="Anou Her Pythagorean Theorem" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Anou Her Pythagorean Theorem.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.Class Notes">
     <configuration name="Class Notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -228,6 +218,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="Function Notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Function Notes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="Jurrasic Park Map- Anou Her" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -246,20 +254,38 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/notes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Dictionay World Map - Anou Her" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Jurrasic Park Map- Anou Her" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Class Notes" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Anou Her Pythagorean Theorem" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Anou Her - World Map (OOP)" />
+      <item index="0" class="java.lang.String" itemvalue="Python.notes" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Dictionay World Map - Anou Her" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Jurrasic Park Map- Anou Her" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Function Notes" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Class Notes" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Anou Her - World Map (OOP)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Class Notes" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Dictionay World Map - Anou Her" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Jurrasic Park Map- Anou Her" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Anou Her Pythagorean Theorem" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Class Notes" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Function Notes" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Jurrasic Park Map- Anou Her" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Dictionay World Map - Anou Her" />
+        <item index="4" class="java.lang.String" itemvalue="Python.notes" />
       </list>
     </recent_temporary>
   </component>
@@ -286,13 +312,35 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16398244" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29952458" sideWeight="0.1068814" order="7" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29952458" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29952458" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 061aa536180719f493e9d2ec75946dd9cca7514a
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29952458" sideWeight="0.8931186" order="2" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> 2b754e83ee75f205f0f3be69c5a6d5d46e2c7da4
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> 061aa536180719f493e9d2ec75946dd9cca7514a
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -313,6 +361,20 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Lucky7's Anou Her.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Guess Game Anou Her.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="67" lean-forward="false" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Warmups.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -324,6 +386,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -352,6 +415,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -359,6 +423,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
           <caret line="126" column="49" lean-forward="false" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -387,6 +452,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
           <caret line="126" column="49" lean-forward="false" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -415,6 +481,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
           <caret line="126" column="49" lean-forward="false" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -430,6 +497,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
           <caret line="126" column="49" lean-forward="false" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -445,6 +513,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2159">
           <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -460,6 +529,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2159">
           <caret line="127" column="0" lean-forward="true" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -475,6 +545,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1938">
           <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -490,6 +561,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
           <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -498,6 +570,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -505,6 +578,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -512,6 +586,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -564,6 +639,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3502">
           <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -574,17 +650,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Anou Her Pythagorean Theorem.py">
+    <entry file="file://$PROJECT_DIR$/Jurrasic Park Map- Anou Her.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+        <state relative-caret-position="2771">
+          <caret line="163" column="11" lean-forward="false" selection-start-line="163" selection-start-column="11" selection-end-line="163" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Function Notes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="629">
+          <caret line="37" column="15" lean-forward="false" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -592,19 +670,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
           <caret line="36" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Jurrasic Park Map- Anou Her.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3094">
-          <caret line="182" column="15" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="182" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Class Notes.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="136">
           <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding />
@@ -615,6 +687,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1389">
           <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="249">
+          <caret line="74" column="63" lean-forward="false" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+=======
+        <state relative-caret-position="239">
+          <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+>>>>>>> 061aa536180719f493e9d2ec75946dd9cca7514a
+>>>>>>> 2b754e83ee75f205f0f3be69c5a6d5d46e2c7da4
           <folding />
         </state>
       </provider>
