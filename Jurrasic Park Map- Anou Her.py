@@ -181,4 +181,3 @@ while True:
     if current_node == world_map["COPTER"]:
         print('You arrive at the Helipad, you get onto the helicopter and leave the Island. GOOD JOB!')
         exit(0)
- # cv,
