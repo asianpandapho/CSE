@@ -96,9 +96,9 @@ lab = Room("Laboratory\n",
 
 visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
-             'like Odor Away, a net, and bug spray, and a custom Jurrasic Park lighter\n'
+             'like Odor Away, a net, and a custom Jurrasic Park lighter\n'
              ' there is a path Northwest,\n',
-             None, None, None, None, None, None, 'velo', None)
+             None, None, None, None, None, 'velo', None, None)
 
 velo = Room("Velociraptor Cage\n",
             'You arrive at Velociraptor Valley where you see 4 Velociraptors running around and jumping.\n'
