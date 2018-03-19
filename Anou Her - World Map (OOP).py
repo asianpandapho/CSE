@@ -106,6 +106,8 @@ velo = Room("Velociraptor Cage\n",
             ' There are paths Northeast, North, and West\n',
             'spino', None, 'tri', None, 'diloph', None, None, None)
 
+vel = Characters
+
 tri = Room('Triceratops Cage\n',
            'You arrive at Triceratops Track , there is a Triceratops munching on some leaves,\n'
            'it looks pretty friendly however you should not get close to it,\n'
