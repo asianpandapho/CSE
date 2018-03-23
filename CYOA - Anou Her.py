@@ -157,6 +157,9 @@ class Characters(object):
         if target.health <= 0:
             target.dead = True
             print('%s died' % target.name)
+        elif self.health <= 0:
+            self.dead = True
+            print('You Died Bro ...')
             exit(0)
 
     def fight(self, enemy):
@@ -202,6 +205,11 @@ class Mega(Carni):
 class Spino(Carni):
     def __init__(self):
         super(Spino, self).__init__('Spinosaurus', 'A big Spinosaurus that does tons of damage', True, False)
+
+
+class Pter(Carni):
+    def __init__(self):
+        super(Pter, self).__init__('Pteradon', 'A Pteradon that can swoop down and peck you', True, False)
 
 
 class Velo(Carni):
@@ -273,57 +281,57 @@ velo = Room("Velociraptor Cage\n",
 tri = Room('Triceratops Cage\n',
            'You arrive at Triceratops Track , there is a Triceratops munching on some leaves,\n'
            'it looks pretty friendly however you should not get close to it,\n'
-           '(I feel you can ride it though)\nnn'
-           ''
-           ' there are paths Northwest, East, and North\n', 'brachio', None, None, 'velo', None, 'mega', None, None)
+           '(I feel you can ride it though)\n'
+           ' there are paths Northwest, East, and North\n', 'brachio', None, None, 'velo', None, 'mega', None, None,
+           Tri())
 
 brachio = Room('Brachiosaurus Cage\n',
                'You arrive at Brachiosaurus Bridge, you see huge dinosaurs walking around and eating from\n'
                'massive trees, there are paths West, East, and North\n',
-               'stego', None, 'mega', 'spino', None, None, None, None)
+               'stego', None, 'mega', 'spino', None, None, None, None, Brachio())
 
 spino = Room('Spinosaurus Cage\n',
              'You arrive at Spinosaurus Station and see a huge Spinosaurus, it look very hungry,\n'
              'you don\'t want to mess with it, however 2 trang bullets will make it unconscious\n'
              ' there are paths East, North, and West\n',
-             't_rex', None, 'brachio', 'diloph', None, None, None, None)
+             't_rex', None, 'brachio', 'diloph', None, None, None, None, Spino())
 
 diloph = Room('Dilophasaurus Cage\n',
               'You arrive at Dilophosaurus Dungeon and see 4 Dilophosaurus fighting,\n'
               'and they look very hungry, they can all be scared off by a flare if you shoot it properly\n'
               'there are paths West and Northwest\n',
-              None, None, 'spino', None, None, 't_rex', None, None,)
+              None, None, 'spino', None, None, 't_rex', None, None, Diloph())
 
 mega = Room('Megalodon Cage\n',
             'You arrive at Megalodon Waters and see 1 huge shark in the water,\n'
             'it looks like it can jump out at you at any second,\n'
             'but it remains calm for now just don\'t drop blood into the water\n'
             'there are paths East and Northeast\n',
-            None, None, None, 'brachio', 'stego', None, None, None)
+            None, None, None, 'brachio', 'stego', None, None, None, Mega())
 
 t_rex = Room('Tyrannosaurus Cage\n',
              'You arrive at the Tyrannosaurus Jungle, there you see the king of dinosaurs,\n'
              'it can be tranquilized with 3 tranq bullets,\n'
              ' there are paths North and West\n',
-             'i_rex', None, 'stego', None, None, None, None, None)
+             'i_rex', None, 'stego', None, None, None, None, None, TRex())
 
 stego = Room('Stegosaurus Cage\n',
              'You arrive at Stegosaurus Springs, you see the Stegosaurus drinking water,\n'
              'you might need to befriend it later\n'
              ' there are paths North and East\n',
-             'pter', None, None, 't_rex', None, None, None, None)
+             'pter', None, None, 't_rex', None, None, None, None, Stego())
 
 i_rex = Room('Indominous Rex Cage\n',
              'You arrive at Indominous Rex Swamp, you cant see anything but trees,\n'
              ' however you feel a presence someone told you that the I Rex can be tranquilized by 5 darts\n'
              ', there are paths Northwest and West\n',
-             None, None, 'pter', None, None, 'copter', None, None)
+             None, None, 'pter', None, None, 'copter', None, None, IRex())
 
 pter = Room('Pterodactyl Cage\n',
             'You arrive at Pterodactyl City, you see them fly in the sky,\n'
             'it looks like they can just swoop down an grab you off the ground, a flare can scare them off\n'
             ' there are paths Northeast and East\n',
-            None, None, None, "i_rex", 'copter', None, None, None)
+            None, None, None, "i_rex", 'copter', None, None, None, Pter())
 
 copter = Room('HELIPAD\n',
               'You arrive at the Helipad, you get onto the helicopter and leave the Island.\n',
