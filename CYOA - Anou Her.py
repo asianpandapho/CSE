@@ -1,26 +1,6 @@
 import random
 
 
-class Room(object):
-    def __init__(self, name, description, north, south, west, east, northeast, northwest, southeast, southwest,
-                 enemies=None):
-        self.name = name
-        self.description = description
-        self.n = north
-        self.s = south
-        self.w = west
-        self.e = east
-        self.ne = northeast
-        self.nw = northwest
-        self.se = southeast
-        self.sw = southwest
-        self.enemies = enemies
-
-    def move(self, direction):
-        global current_node
-        current_node = globals()[getattr(self, direction)]
-
-
 class Inventory(object):
     def __init__(self, equip, unequip):
         self.opened = False
@@ -147,6 +127,7 @@ class Characters(object):
         self.attack = attack
         self.enemy = False
         self.block = block
+        self.fighta = False
 
     def take_damage(self, amt):
             self.health -= amt
@@ -163,10 +144,13 @@ class Characters(object):
             exit(0)
 
     def fight(self, enemy):
-        print('You engage in a fight with the %s' % enemy.name)
+        print('Do you want to engage in a fight with the %s' % enemy.name)
+        if command == 'yes':
+            print('You engage in a fight with the %s' % enemy.name)
+            choice = self
 
-        while self.health != 0:
-            choice = random.choice([enemy, self])
+            while self.health != 0:
+                choice = random.choice([enemy, self])
             if choice == self:
                 enemy.swing(self)
             elif choice == enemy:
@@ -224,7 +208,7 @@ class Diloph(Carni):
 
 class Herb(Enemy):
     def __init__(self, name, desc):
-        super(Herb, self).__init__(name, desc, 200, 15)
+        super(Herb, self).__init__(name, desc, 150, 15)
 
 
 class Tri(Herb):
@@ -240,6 +224,26 @@ class Brachio(Herb):
 class Stego(Herb):
     def __init__(self):
         super(Stego, self).__init__('Stegosaurus', 'A dinosaur that has spikes ok its tail that do a lot of damage')
+
+
+class Room(object):
+    def __init__(self, name, description, north, south, west, east, northeast, northwest, southeast, southwest,
+                 enemies=None):
+        self.name = name
+        self.description = description
+        self.n = north
+        self.s = south
+        self.w = west
+        self.e = east
+        self.ne = northeast
+        self.nw = northwest
+        self.se = southeast
+        self.sw = southwest
+        self.enemies = enemies
+
+    def move(self, direction):
+        global current_node
+        current_node = globals()[getattr(self, direction)]
 
 
 you = Characters('you', 'you are yourself', 50, 50, 1)
