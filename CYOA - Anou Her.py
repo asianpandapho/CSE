@@ -144,15 +144,14 @@ class Characters(object):
             exit(0)
 
     def fight(self, enemy):
-        print('Do you want to engage in a fight with the %s' % enemy.name)
-        if command == 'yes':
             print('You engage in a fight with the %s' % enemy.name)
             choice = self
-
             while self.health != 0:
                 choice = random.choice([enemy, self])
             if choice == self:
                 enemy.swing(self)
+
+                
             elif choice == enemy:
                 self.swing(enemy)
 
