@@ -1,14 +1,6 @@
 import random
 
 
-class Inventory(object):
-    def __init__(self, equip, unequip):
-        self.opened = False
-        self.equip = equip
-        self.unequip = unequip
-        self.closed = True
-
-
 class Item(object):
     def __init__(self, name, desc, value):
         self.name = name
@@ -32,8 +24,8 @@ class Weapons(Item):
         super(Weapons, self).__init__(name, desc, 100)
         self.damage = damage
 
-    def attack(self, Enemy, Weapons):
-        print("You attack the %s with your %s" % Enemy.name, Weapons.name)
+    def attack(self, enemy, weapons):
+        print("You attack the %s with your %s" % enemy.name, weapons.name)
 
 
 class Tranq(Weapons):
@@ -118,6 +110,16 @@ class Bandages(Healing):
         super(Bandages, self).__init__('Bandage', "A Bandage that will heal you for 10 health", 5)
 
 
+class Inventory(object):
+    def __init__(self, equip, unequip):
+        self.opened = False
+        self.equip = equip
+        self.unequip = unequip
+        self.closed = True
+
+
+
+
 class Characters(object):
     def __init__(self, name, description, health, attack, block):
         self.name = name
@@ -130,7 +132,7 @@ class Characters(object):
         self.fighta = False
 
     def take_damage(self, amt):
-            self.health -= amt
+        self.health -= amt
 
     def swing(self, target):
         target.take_damage(self.attack)
@@ -144,18 +146,16 @@ class Characters(object):
             exit(0)
 
     def fight(self, enemy):
-            print('You engage in a fight with the %s' % enemy.name)
-            choice = random.choice([enemy, self])
-            while self.health != 0:
+        print('You engage in a fight with the %s' % enemy.name)
+        choice = random.choice([enemy, self])
+        while self.health != 0:
 
-                if choice == self:
-                    enemy.swing(self)
-                    print('%s attacks you' % enemy.name)
-                elif choice == enemy:
-                    self.swing(enemy)
-                    print('you attacked the %s' % enemy.name)
-
-
+            if choice == self:
+                enemy.swing(self)
+                print('%s attacks you' % enemy.name)
+            elif choice == enemy:
+                self.swing(enemy)
+                print('you attacked the %s' % enemy.name)
 
 
 class Enemy(Characters):
@@ -249,12 +249,11 @@ class Room(object):
 
 you = Characters('you', 'you are yourself', 50, 50, 1)
 
-
 # Initialize Rooms
 airplane = Room("Airplane Landing Area\n",
                 "You are in the Airplane Landing Area, you can only go North\n"
                 " to go to the gate.", "gate", "You can't go there", "You can't go there", "You can't go there\n",
-                "You can't go there", "You can't go there", "You can't go there", "You can't go there",)
+                "You can't go there", "You can't go there", "You can't go there", "You can't go there", )
 
 gate = Room("Gate Entrance\n",
             'You are at the entrance of the park, '
@@ -268,7 +267,7 @@ lab = Room("Laboratory\n",
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
            'the tranquilizer has 5 bullets in it while the flare has 3, however you can only take 1\n'
            ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n',
-           None, None,  None, None, 'tri', None, None, None)
+           None, None, None, None, 'tri', None, None, None)
 
 visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
@@ -281,7 +280,6 @@ velo = Room("Velociraptor Cage\n",
             'They have one huge claw on both of their feet, and they are scared of flares\n.'
             ' There are paths Northeast, North, and West\n',
             'spino', None, 'tri', None, 'diloph', None, None, None, Velo())
-
 
 tri = Room('Triceratops Cage\n',
            'You arrive at Triceratops Track , there is a Triceratops munching on some leaves,\n'
@@ -340,7 +338,7 @@ pter = Room('Pterodactyl Cage\n',
 
 copter = Room('HELIPAD\n',
               'You arrive at the Helipad, you get onto the helicopter and leave the Island.\n',
-              None, None, None, None, None, None, None, None,)
+              None, None, None, None, None, None, None, None, )
 
 current_node = airplane
 directions = ['n', 'e', 's', 'w', 'ne', 'nw', 'se', 'sw']
@@ -375,3 +373,13 @@ while True:
     if current_node == copter:
         print('You arrive at the Helipad, you get onto the helicopter and leave the Island. GOOD JOB!')
         exit(0)
+
+
+    choose = input(">_")
+    print("What section do you want to go in?")
+        print(Weapons, Tool, Healing, Misc)
+            if choose == Weapons:
+                print('Which weapon do you want to equip?')
+                print('Tranq', 'Flare', "Scar")
+            if choose == Tranq:
+                self.equip = True
