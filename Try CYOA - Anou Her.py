@@ -30,12 +30,12 @@ class Weapons(Item):
 
 class Tranq(Weapons):
     def __init__(self):
-        super(Tranq, self).__init__("Tranquilizer Gun", "Makes enemies drowzy and fall asleep", 10)
+        super(Tranq, self).__init__("Tranquilizer Gun", "Makes enemies drowzy and fall asleep", 25)
 
 
 class Flare(Weapons):
     def __init__(self):
-        super(Flare, self).__init__("Flare Gun", "Scares away smaller Dinosaurs", 5)
+        super(Flare, self).__init__("Flare Gun", "Scares away smaller Dinosaurs", 15)
 
 
 class Scar(Weapons):
@@ -110,23 +110,23 @@ class Bandages(Healing):
         super(Bandages, self).__init__('Bandage', "A Bandage that will heal you for 10 health", 5)
 
 
-class Inventory(object):
+class Bag(object):
     def __init__(self, equip, unequip):
         self.opened = False
         self.equip = equip
         self.unequip = unequip
         self.closed = True
 
-
+# you = Characters('you', 'you are yourself', 50, 50, 1)
 
 
 class Characters(object):
-    def __init__(self, name, description, health, attack, block):
+    def __init__(self, name, description, health, weapon, block):
         self.name = name
         self.description = description
         self.dead = False
         self.health = health
-        self.attack = attack
+        self.weapon = weapon
         self.enemy = False
         self.block = block
         self.fighta = False
@@ -135,7 +135,7 @@ class Characters(object):
         self.health -= amt
 
     def swing(self, target):
-        target.take_damage(self.attack)
+        target.take_damage(self.weapon)
         print('%s attacks %s' % (self.name, target.name))
         if target.health <= 0:
             target.dead = True
@@ -147,6 +147,7 @@ class Characters(object):
 
     def fight(self, enemy):
         print('You engage in a fight with the %s' % enemy.name)
+        print(enemy.description)
         choice = random.choice([enemy, self])
         while self.health != 0:
 
@@ -156,6 +157,20 @@ class Characters(object):
             elif choice == enemy:
                 self.swing(enemy)
                 print('you attacked the %s' % enemy.name)
+
+    def open(self):
+        choose = input(">_")
+        print("What section do you want to go in?")
+        print("Weapons, Tool, Healing, Misc")
+        if choose == Weapons:
+            print('Which weapon do you want to equip?')
+            print(Weapons, Tool, Healing, Misc)
+            if choose == "Tranq":
+                self.equip = True
+                self.weapon(25)
+            if choose == "Flare":
+                self.equip = True
+                self.weapon(15)
 
 
 class Enemy(Characters):
@@ -373,13 +388,3 @@ while True:
     if current_node == copter:
         print('You arrive at the Helipad, you get onto the helicopter and leave the Island. GOOD JOB!')
         exit(0)
-
-
-    choose = input(">_")
-    print("What section do you want to go in?")
-        print(Weapons, Tool, Healing, Misc)
-            if choose == Weapons:
-                print('Which weapon do you want to equip?')
-                print('Tranq', 'Flare', "Scar")
-            if choose == Tranq:
-                self.equip = True
