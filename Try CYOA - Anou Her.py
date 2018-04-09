@@ -110,26 +110,17 @@ class Bandages(Healing):
         super(Bandages, self).__init__('Bandage', "A Bandage that will heal you for 10 health", 5)
 
 
-class Bag(object):
-    def __init__(self, equip, unequip):
-        self.opened = False
-        self.equip = equip
-        self.unequip = unequip
-        self.closed = True
-
-# you = Characters('you', 'you are yourself', 50, 50, 1)
-
-
 class Characters(object):
     def __init__(self, name, description, health, weapon, block):
         self.name = name
         self.description = description
         self.dead = False
         self.health = health
-        self.weapon = weapon
+        self.weapon = weapon  # Weapon Object
         self.enemy = False
         self.block = block
         self.fighta = False
+        self.inventory = []
 
     def take_damage(self, amt):
         self.health -= amt
@@ -145,32 +136,23 @@ class Characters(object):
             print('You Died Bro ...')
             exit(0)
 
+    def equip(self, item):
+        if isinstance(item, Weapons):
+            self.weapon = item
+            print("Equipped.")
+
     def fight(self, enemy):
         print('You engage in a fight with the %s' % enemy.name)
         print(enemy.description)
         choice = random.choice([enemy, self])
-        while self.health != 0:
 
+        while self.health != 0:
             if choice == self:
                 enemy.swing(self)
                 print('%s attacks you' % enemy.name)
             elif choice == enemy:
                 self.swing(enemy)
                 print('you attacked the %s' % enemy.name)
-
-    def open(self):
-        choose = input(">_")
-        print("What section do you want to go in?")
-        print("Weapons, Tool, Healing, Misc")
-        if choose == Weapons:
-            print('Which weapon do you want to equip?')
-            print(Weapons, Tool, Healing, Misc)
-            if choose == "Tranq":
-                self.equip = True
-                self.weapon(25)
-            if choose == "Flare":
-                self.equip = True
-                self.weapon(15)
 
 
 class Enemy(Characters):
@@ -359,11 +341,11 @@ current_node = airplane
 directions = ['n', 'e', 's', 'w', 'ne', 'nw', 'se', 'sw']
 long_directions = ['north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']
 
-inventory = ['screwdriver', 'flashlight', ]
-item1 = "tranquilizer"
-item2 = "flare gun"
-item3 = 'odor away'
-item4 = 'lighter'
+item1 = Tranq()
+item2 = Flare()
+item3 = OdorAway(3)
+item4 = Lighter()
+you.inventory.append(item1)
 
 while True:
     print(current_node.name)
@@ -383,6 +365,8 @@ while True:
             current_node.move(command)
         except KeyError:
             print('You can\'t go this way')
+    elif 'equip' in command:
+        you.equip(item1)
     else:
         print('command not Recognized')
     if current_node == copter:
