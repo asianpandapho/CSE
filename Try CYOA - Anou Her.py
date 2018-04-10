@@ -143,16 +143,19 @@ class Characters(object):
 
     def fight(self, enemy):
         print('You engage in a fight with the %s' % enemy.name)
-        print(enemy.description)
-        choice = random.choice([enemy, self])
+        first_strike = random.choice([enemy, self])
 
-        while self.health != 0:
-            if choice == self:
+        if self.health != 0:
+            input()
+            if first_strike == enemy:
                 enemy.swing(self)
                 print('%s attacks you' % enemy.name)
-            elif choice == enemy:
+            elif first_strike == self:
                 self.swing(enemy)
                 print('you attacked the %s' % enemy.name)
+                if enemy.health == 0:
+                    print('The %s died' % enemy.name)
+                    print()
 
 
 class Enemy(Characters):
@@ -343,8 +346,9 @@ long_directions = ['north', 'east', 'south', 'west', 'northeast', 'northwest', '
 
 item1 = Tranq()
 item2 = Flare()
-item3 = OdorAway(3)
-item4 = Lighter()
+item3 = Scar()
+item4 = OdorAway(3)
+item5 = Lighter()
 you.inventory.append(item1)
 
 while True:
@@ -365,8 +369,12 @@ while True:
             current_node.move(command)
         except KeyError:
             print('You can\'t go this way')
-    elif 'equip' in command:
+    elif 'equip tranq' in command:
         you.equip(item1)
+    elif 'equip flare' in command:
+        you.equip(item2)
+    elif 'equip scar' in command:
+        you.equip(item3)
     else:
         print('command not Recognized')
     if current_node == copter:
