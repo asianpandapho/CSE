@@ -1,4 +1,5 @@
 import random
+import sys
 
 
 class Item(object):
@@ -30,17 +31,17 @@ class Weapons(Item):
 
 class Tranq(Weapons):
     def __init__(self):
-        super(Tranq, self).__init__("Tranquilizer Gun", "Makes enemies drowzy and fall asleep", 25)
+        super(Tranq, self).__init__("Tranquilizer Gun", "Makes enemies drowzy and fall asleep", 50)
 
 
 class Flare(Weapons):
     def __init__(self):
-        super(Flare, self).__init__("Flare Gun", "Scares away smaller Dinosaurs", 15)
+        super(Flare, self).__init__("Flare Gun", "Scares away smaller Dinosaurs", 50)
 
 
 class Scar(Weapons):
     def __init__(self):
-        super(Scar, self).__init__('FN Scar', 'A powerful assault rifle that does a lot of damage', 50)
+        super(Scar, self).__init__('FN Scar', 'A powerful assault rifle that does a lot of damage', 75)
 
 
 class Tool(Item):
@@ -120,7 +121,7 @@ class Characters(object):
         self.enemy = False
         self.block = block
         self.fighta = False
-        self.inventory = []
+        self.inventory = [Screwdriver, Flashlight, ]
 
     def take_damage(self, amt):
         self.health -= amt
@@ -128,13 +129,6 @@ class Characters(object):
     def swing(self, target):
         target.take_damage(self.weapon)
         print('%s attacks %s' % (self.name, target.name))
-        if target.health <= 0:
-            target.dead = True
-            print('%s died' % target.name)
-        elif self.health <= 0:
-            self.dead = True
-            print('You Died Bro ...')
-            exit(0)
 
     def equip(self, item):
         if isinstance(item, Weapons):
@@ -145,15 +139,19 @@ class Characters(object):
         print('You engage in a fight with the %s' % enemy.name)
         first_strike = random.choice([enemy, self])
 
-        if self.health != 0:
+        while self.health >= 0 and enemy.health > 0:
             input()
             if first_strike == enemy:
                 enemy.swing(self)
                 print('%s attacks you' % enemy.name)
+                if self.health <= 0:
+                    self.dead = True
+                    print('You Died Bro ...')
+                    sys.exit(0)
             elif first_strike == self:
                 self.swing(enemy)
                 print('you attacked the %s' % enemy.name)
-                if enemy.health == 0:
+                if enemy.health <= 0:
                     print('The %s died' % enemy.name)
                     print()
 
@@ -247,7 +245,7 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
-you = Characters('you', 'you are yourself', 50, 50, 1)
+you = Characters('you', 'you are yourself', 50, 0, 1)
 
 # Initialize Rooms
 airplane = Room("Airplane Landing Area\n",
@@ -259,13 +257,13 @@ gate = Room("Gate Entrance\n",
             'You are at the entrance of the park, '
             'You are a electrician and you came to do a checkup\n'
             'You have on you a screwdriver and a flashlight\n'
-            'there are paths East, West, Northeast, and Northwest, and South\n',
+            'there are paths East, West, Northeast, and Northwest, and South, but you should probably go West\n',
             None, 'airplane', 'lab', 'visit', 'velo', 'tri', None, None)
 
 lab = Room("Laboratory\n",
            'You go to the Laboratory and look at how the genetically modify dinosaurs\n'
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
-           'the tranquilizer has 5 bullets in it while the flare has 3, however you can only take 1\n'
+           '\n'
            ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n',
            None, None, None, None, 'tri', None, None, None)
 
@@ -352,12 +350,14 @@ item5 = Lighter()
 you.inventory.append(item1)
 
 while True:
-    print(current_node.name)
-    print(current_node.description)
     if current_node.enemies is not None:
         print(current_node.name)
         print(current_node.description)
         you.fight(current_node.enemies)
+        current_node.enemies = None
+    print(current_node.name)
+    print(current_node.description)
+
     command = input('>_').lower().strip()
     if command == 'quit':
         quit(0)
