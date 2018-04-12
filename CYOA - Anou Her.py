@@ -1,12 +1,5 @@
 import random
-
-
-class Inventory(object):
-    def __init__(self, equip, unequip):
-        self.opened = False
-        self.equip = equip
-        self.unequip = unequip
-        self.closed = True
+import sys
 
 
 class Item(object):
@@ -32,23 +25,23 @@ class Weapons(Item):
         super(Weapons, self).__init__(name, desc, 100)
         self.damage = damage
 
-    def attack(self, Enemy, Weapons):
-        print("You attack the %s with your %s" % Enemy.name, Weapons.name)
+    def attack(self, enemy, weapons):
+        print("You attack the %s with your %s" % enemy.name, weapons.name)
 
 
 class Tranq(Weapons):
     def __init__(self):
-        super(Tranq, self).__init__("Tranquilizer Gun", "Makes enemies drowzy and fall asleep", 10)
+        super(Tranq, self).__init__("Tranquilizer Gun", "Makes enemies drowzy and fall asleep", 50)
 
 
 class Flare(Weapons):
     def __init__(self):
-        super(Flare, self).__init__("Flare Gun", "Scares away smaller Dinosaurs", 5)
+        super(Flare, self).__init__("Flare Gun", "Scares away smaller Dinosaurs", 50)
 
 
 class Scar(Weapons):
     def __init__(self):
-        super(Scar, self).__init__('FN Scar', 'A powerful assault rifle that does a lot of damage', 50)
+        super(Scar, self).__init__('FN Scar', 'A powerful assault rifle that does a lot of damage', 75)
 
 
 class Tool(Item):
@@ -119,43 +112,53 @@ class Bandages(Healing):
 
 
 class Characters(object):
-    def __init__(self, name, description, health, attack, block):
+    def __init__(self, name, description, health, weapon, block):
         self.name = name
         self.description = description
         self.dead = False
         self.health = health
-        self.attack = attack
+        self.weapon = weapon  # Weapon Object
         self.enemy = False
         self.block = block
         self.fighta = False
+        self.inventory = [Screwdriver, Flashlight, ]
 
     def take_damage(self, amt):
-            self.health -= amt
+        self.health -= amt
 
     def swing(self, target):
-        target.take_damage(self.attack)
+        target.take_damage(self.weapon)
         print('%s attacks %s' % (self.name, target.name))
-        if target.health <= 0:
-            target.dead = True
-            print('%s died' % target.name)
-        elif self.health <= 0:
-            self.dead = True
-            print('You Died Bro ...')
-            exit(0)
+
+    def equip(self, item):
+        if isinstance(item, Weapons):
+            self.weapon = item
+            print("Equipped.")
 
     def fight(self, enemy):
-            print('You engage in a fight with the %s' % enemy.name)
-            choice = random.choice([enemy, self])
-            while self.health != 0:
+        print('You engage in a fight with the %s' % enemy.name)
+        first_strike = random.choice([enemy, self])
 
-                if choice == self:
-                    enemy.swing(self)
-                    print('%s attacks you' % enemy.name)
-                elif choice == enemy:
+        while self.health >= 0 and enemy.health > 0:
+            input()
+            if first_strike == enemy:
+                enemy.swing(self)
+                print('%s attacks you' % enemy.name)
+                if self.health <= 0:
+                    self.dead = True
+                    print('You Died Bro ...')
+                    sys.exit(0)
+            elif first_strike == self:
+                if self.weapon == 0:
+                    print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
+                    sys.exit(0)
+                else:
                     self.swing(enemy)
                     print('you attacked the %s' % enemy.name)
 
-
+                print('you attacked the %s' % enemy.name)
+                if enemy.health <= 0:
+                    print('The %s died' % enemy.name)
 
 
 class Enemy(Characters):
@@ -247,28 +250,27 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
-you = Characters('you', 'you are yourself', 50, 50, 1)
-
+you = Characters('you', 'you are yourself', 50, 0, 1)
 
 # Initialize Rooms
 airplane = Room("Airplane Landing Area\n",
                 "You are in the Airplane Landing Area, you can only go North\n"
                 " to go to the gate.", "gate", "You can't go there", "You can't go there", "You can't go there\n",
-                "You can't go there", "You can't go there", "You can't go there", "You can't go there",)
+                "You can't go there", "You can't go there", "You can't go there", "You can't go there", )
 
 gate = Room("Gate Entrance\n",
             'You are at the entrance of the park, '
             'You are a electrician and you came to do a checkup\n'
             'You have on you a screwdriver and a flashlight\n'
-            'there are paths East, West, Northeast, and Northwest, and South\n',
+            'there are paths East, West, Northeast, and Northwest, and South, but you should probably go West\n',
             None, 'airplane', 'lab', 'visit', 'velo', 'tri', None, None)
 
 lab = Room("Laboratory\n",
            'You go to the Laboratory and look at how the genetically modify dinosaurs\n'
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
-           'the tranquilizer has 5 bullets in it while the flare has 3, however you can only take 1\n'
-           ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n',
-           None, None,  None, None, 'tri', None, None, None)
+           ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n'
+           'to equip the tranq print equip tranq, to equip flare print equip flare\n',
+           None, None, None, None, 'tri', None, None, None)
 
 visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
@@ -281,7 +283,6 @@ velo = Room("Velociraptor Cage\n",
             'They have one huge claw on both of their feet, and they are scared of flares\n.'
             ' There are paths Northeast, North, and West\n',
             'spino', None, 'tri', None, 'diloph', None, None, None, Velo())
-
 
 tri = Room('Triceratops Cage\n',
            'You arrive at Triceratops Track , there is a Triceratops munching on some leaves,\n'
@@ -340,25 +341,28 @@ pter = Room('Pterodactyl Cage\n',
 
 copter = Room('HELIPAD\n',
               'You arrive at the Helipad, you get onto the helicopter and leave the Island.\n',
-              None, None, None, None, None, None, None, None,)
+              None, None, None, None, None, None, None, None, )
 
 current_node = airplane
 directions = ['n', 'e', 's', 'w', 'ne', 'nw', 'se', 'sw']
 long_directions = ['north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']
 
-inventory = ['screwdriver', 'flashlight', ]
-item1 = "tranquilizer"
-item2 = "flare gun"
-item3 = 'odor away'
-item4 = 'lighter'
+item1 = Tranq()
+item2 = Flare()
+item3 = Scar()
+item4 = OdorAway(3)
+item5 = Lighter()
+you.inventory.append(item1)
 
 while True:
-    print(current_node.name)
-    print(current_node.description)
     if current_node.enemies is not None:
         print(current_node.name)
         print(current_node.description)
         you.fight(current_node.enemies)
+        current_node.enemies = None
+    print(current_node.name)
+    print(current_node.description)
+
     command = input('>_').lower().strip()
     if command == 'quit':
         quit(0)
@@ -370,6 +374,12 @@ while True:
             current_node.move(command)
         except KeyError:
             print('You can\'t go this way')
+    elif 'equip tranq' in command:
+        you.equip(item1)
+    elif 'equip flare' in command:
+        you.equip(item2)
+    elif 'equip scar' in command:
+        you.equip(item3)
     else:
         print('command not Recognized')
     if current_node == copter:
