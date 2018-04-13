@@ -149,11 +149,16 @@ class Characters(object):
                     print('You Died Bro ...')
                     sys.exit(0)
             elif first_strike == self:
-                self.swing(enemy)
+                if self.weapon == 0:
+                    print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
+                    sys.exit(0)
+                else:
+                    self.swing(enemy)
+                    print('you attacked the %s' % enemy.name)
+
                 print('you attacked the %s' % enemy.name)
                 if enemy.health <= 0:
                     print('The %s died' % enemy.name)
-                    print()
 
 
 class Enemy(Characters):
@@ -263,8 +268,8 @@ gate = Room("Gate Entrance\n",
 lab = Room("Laboratory\n",
            'You go to the Laboratory and look at how the genetically modify dinosaurs\n'
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
-           '\n'
-           ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n',
+           ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n'
+           'to equip the tranq print equip tranq, to equip flare print equip flare\n',
            None, None, None, None, 'tri', None, None, None)
 
 visit = Room('Visitor Center\n',
