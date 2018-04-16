@@ -127,7 +127,7 @@ class Characters(object):
         self.health -= amt
 
     def swing(self, target):
-        target.take_damage(self.weapon)
+        target.take_damage(self.weapon.damage)
         print('%s attacks %s' % (self.name, target.name))
 
     def equip(self, item):
