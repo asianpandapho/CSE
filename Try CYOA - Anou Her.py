@@ -162,10 +162,10 @@ class Characters(object):
 
 
 class Enemy(Characters):
-    def __init__(self, name, desc, health, damage):
+    def __init__(self, name, desc, health, weapon):
         super(Enemy, self).__init__(name, desc, 100, 25, 1)
         self.health = health
-        self.damage = damage
+        self.damage = weapon
 
 
 class Carni(Enemy):
@@ -333,8 +333,8 @@ i_rex = Room('Indominous Rex Cage\n',
              ', there are paths Northwest and West\n',
              None, None, 'pter', None, None, 'copter', None, None, IRex())
 
-pter = Room('Pterodactyl Cage\n',
-            'You arrive at Pterodactyl City, you see them fly in the sky,\n'
+pter = Room('Pteradon Cage\n',
+            'You arrive at Pteradon City, you see them fly in the sky,\n'
             'it looks like they can just swoop down an grab you off the ground, a flare can scare them off\n'
             ' there are paths Northeast and East\n',
             None, None, None, "i_rex", 'copter', None, None, None, Pter())
