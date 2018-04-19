@@ -25,9 +25,6 @@ class Weapons(Item):
         super(Weapons, self).__init__(name, desc, 100)
         self.damage = damage
 
-    def attack(self, enemy, weapons):
-        print("You attack the %s with your %s" % enemy.name, weapons.name)
-
 
 class Tranq(Weapons):
     def __init__(self):
