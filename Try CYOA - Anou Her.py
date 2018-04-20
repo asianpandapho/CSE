@@ -165,6 +165,13 @@ class Enemy(Characters):
         self.damage = weapon
 
 
+class Player(Characters):
+    def __init__(self, name, desc, health, weapon):
+        super(Player, self).__init__(name, desc, 100, 0, 0)
+        self.health = health
+        self.damage = weapon
+
+
 class Carni(Enemy):
     def __init__(self, name, desc, big, small):
         super(Carni, self).__init__(name, desc, 100, 25)
