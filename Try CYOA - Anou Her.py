@@ -21,9 +21,9 @@ class Item(object):
 
 
 class Weapons(Item):
-    def __init__(self, name, desc, damage):
+    def __init__(self, name, desc, weapon):
         super(Weapons, self).__init__(name, desc, 100)
-        self.damage = damage
+        self.weapon = weapon
 
 
 class Tranq(Weapons):
@@ -160,16 +160,17 @@ class Characters(object):
 
 class Enemy(Characters):
     def __init__(self, name, desc, health, weapon):
-        super(Enemy, self).__init__(name, desc, 100, 25, 1)
+        super(Enemy, self).__init__(name, desc, 100, weapon, 1)
         self.health = health
-        self.damage = weapon
+        self.weapon = weapon
+# Remember to change damage because 15 is not the weapon
 
 
 class Player(Characters):
     def __init__(self, name, desc, health, weapon):
         super(Player, self).__init__(name, desc, 100, 0, 0)
         self.health = health
-        self.damage = weapon
+        self.weapon = weapon
 
 
 class Carni(Enemy):
@@ -216,7 +217,7 @@ class Diloph(Carni):
 
 class Herb(Enemy):
     def __init__(self, name, desc):
-        super(Herb, self).__init__(name, desc, 150, 15)
+        super(Herb, self).__init__(name, desc, 150)
 
 
 class Tri(Herb):
