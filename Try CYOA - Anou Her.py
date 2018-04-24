@@ -26,6 +26,16 @@ class Weapons(Item):
         self.weapon = weapon
 
 
+class Claw(Weapons):
+    def __init__(self):
+        super(Claw, self).__init__("Claws", "Carnivore claws", 25)
+
+
+class Tail(Weapons):
+    def __init__(self):
+        super(Tail, self).__init__("Tail", "Herbivore Tail", 15)
+
+
 class Tranq(Weapons):
     def __init__(self):
         super(Tranq, self).__init__("Tranquilizer Gun", "Makes enemies drowzy and fall asleep", 50)
@@ -140,7 +150,7 @@ class Characters(object):
             input()
             if first_strike == enemy:
                 enemy.swing(self)
-                print('%s attacks you' % enemy.name)
+                print('%s attacks you with its %s' % enemy.name, enemy.weapon)
                 if self.health <= 0:
                     self.dead = True
                     print('You Died Bro ...')
@@ -175,7 +185,7 @@ class Player(Characters):
 
 class Carni(Enemy):
     def __init__(self, name, desc, big, small):
-        super(Carni, self).__init__(name, desc, 100, 25)
+        super(Carni, self).__init__(name, desc, 100, Claw)
         self.big = big
         self.small = small
 
@@ -217,7 +227,7 @@ class Diloph(Carni):
 
 class Herb(Enemy):
     def __init__(self, name, desc):
-        super(Herb, self).__init__(name, desc, 150)
+        super(Herb, self).__init__(name, desc, 150, Tail)
 
 
 class Tri(Herb):
