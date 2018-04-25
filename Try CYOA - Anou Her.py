@@ -14,16 +14,15 @@ class Item(object):
 
     def equip(self):
         self.equip = True
-        print("You equipped a %s" % self.name)
 
     def sell(self):
         print("You sell the %s for %d gold" % (self.name, self.value))
 
 
 class Weapons(Item):
-    def __init__(self, name, desc, weapon):
-        super(Weapons, self).__init__(name, desc, 100)
-        self.weapon = weapon
+    def __init__(self, name, desc, damage):
+        super(Weapons, self).__init__(name, desc, 0)
+        self.damage = damage
 
 
 class Claw(Weapons):
@@ -128,7 +127,7 @@ class Characters(object):
         self.enemy = False
         self.block = block
         self.fighta = False
-        self.inventory = [Screwdriver, Flashlight, ]
+        self.inventory = [Screwdriver, Flashlight]
 
     def take_damage(self, amt):
         self.health -= amt
