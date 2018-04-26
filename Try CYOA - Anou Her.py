@@ -133,8 +133,9 @@ class Characters(object):
         self.health -= amt
 
     def swing(self, target):
-        target.take_damage(self.weapon.damage)
-        print('%s attacks %s' % (self.name, target.name))
+        target.take_damage(target.weapon.damage)
+        print('%s attacks %s with its %s' % (target.name, target.name, target.weapon.name))
+        print('It does %s damage' % target.weapon.damage)
 
     def equip(self, item):
         if isinstance(item, Weapons):
@@ -144,12 +145,10 @@ class Characters(object):
     def fight(self, enemy):
         print('You engage in a fight with the %s' % enemy.name)
         first_strike = random.choice([enemy, self])
-
         while self.health >= 0 and enemy.health > 0:
             input()
             if first_strike == enemy:
                 enemy.swing(self)
-                print('%s attacks you with its %s' % enemy.name, enemy.weapon)
                 if self.health <= 0:
                     self.dead = True
                     print('You Died Bro ...')
@@ -160,9 +159,6 @@ class Characters(object):
                     sys.exit(0)
                 else:
                     self.swing(enemy)
-                    print('you attacked the %s' % enemy.name)
-
-                print('you attacked the %s' % enemy.name)
                 if enemy.health <= 0:
                     print('The %s died' % enemy.name)
 
@@ -183,65 +179,66 @@ class Player(Characters):
 
 
 class Carni(Enemy):
-    def __init__(self, name, desc, big, small):
+    def __init__(self, name, desc, big, small, weapon):
         super(Carni, self).__init__(name, desc, 100, Claw)
         self.big = big
         self.small = small
-
+        self.weapon = weapon
 
 class TRex(Carni):
     def __init__(self):
-        super(TRex, self).__init__("T Rex", "A T Rex that does tons of damage", True, False)
+        super(TRex, self).__init__("T Rex", "A T Rex that does tons of damage", True, False, Claw)
 
 
 class IRex(Carni):
     def __init__(self):
-        super(IRex, self).__init__('I Rex', "An I Rex that does tons of damage", True, False)
+        super(IRex, self).__init__('I Rex', "An I Rex that does tons of damage", True, False, Claw)
 
 
 class Mega(Carni):
     def __init__(self):
-        super(Mega, self).__init__('Megalodon', 'A big shark that will eat you', True, False)
+        super(Mega, self).__init__('Megalodon', 'A big shark that will eat you', True, False, Claw)
 
 
 class Spino(Carni):
     def __init__(self):
-        super(Spino, self).__init__('Spinosaurus', 'A big Spinosaurus that does tons of damage', True, False)
+        super(Spino, self).__init__('Spinosaurus', 'A big Spinosaurus that does tons of damage', True, False, Claw)
 
 
 class Pter(Carni):
     def __init__(self):
-        super(Pter, self).__init__('Pteradon', 'A Pteradon that can swoop down and peck you', True, False)
+        super(Pter, self).__init__('Pteradon', 'A Pteradon that can swoop down and peck you', True, False, Claw)
 
 
 class Velo(Carni):
     def __init__(self):
-        super(Velo, self).__init__('Velociraptor', 'A smaller dinosaur that will claw your face', False, True)
+        super(Velo, self).__init__('Velociraptor', 'A smaller dinosaur that will claw your face', False, True, Claw)
 
 
 class Diloph(Carni):
     def __init__(self):
-        super(Diloph, self).__init__('Dilophosaurus', 'A smaller dinosaur that will claw your face', False, True)
+        super(Diloph, self).__init__('Dilophosaurus', 'A smaller dinosaur that will claw your face', False, True, Claw)
 
 
 class Herb(Enemy):
-    def __init__(self, name, desc):
-        super(Herb, self).__init__(name, desc, 150, Tail)
-
+    def __init__(self, name, desc, weapon):
+        super(Herb, self).__init__(name, desc, 150, Tail())
+        self.weapon = weapon
 
 class Tri(Herb):
     def __init__(self):
-        super(Tri, self).__init__('Triceratops', 'An angry Ticeratops that will poke you with its horns')
+        super(Tri, self).__init__('Triceratops', 'An angry Ticeratops that will poke you with its horns', Tail())
 
 
 class Brachio(Herb):
     def __init__(self):
-        super(Brachio, self).__init__('Brachiosaurus', 'A big dinosaur that will whip you with its tail')
+        super(Brachio, self).__init__('Brachiosaurus', 'A big dinosaur that will whip you with its tail', Tail())
 
 
 class Stego(Herb):
     def __init__(self):
-        super(Stego, self).__init__('Stegosaurus', 'A dinosaur that has spikes ok its tail that do a lot of damage')
+        super(Stego, self).__init__('Stegosaurus', 'A dinosaur that has spikes its tail that do a lot of damage',
+                                    Tail())
 
 
 class Room(object):
