@@ -131,11 +131,14 @@ class Characters(object):
 
     def take_damage(self, amt):
         self.health -= amt
+        if self.health < 0:
+            self.health = 0
 
     def swing(self, target):
-        target.take_damage(target.weapon.damage)
-        print('%s attacks %s with its %s' % (target.name, target.name, target.weapon.name))
-        print('It does %s damage' % target.weapon.damage)
+        target.take_damage(self.weapon.damage)
+        print('%s attacks %s with its %s' % (self.name, target.name, self.weapon.name))
+        print('It does %s damage' % self.weapon.damage)
+        print('%s have %s health left' % (target.name, target.health))
 
     def equip(self, item):
         if isinstance(item, Weapons):
@@ -185,6 +188,7 @@ class Carni(Enemy):
         self.small = small
         self.weapon = weapon
 
+
 class TRex(Carni):
     def __init__(self):
         super(TRex, self).__init__("T Rex", "A T Rex that does tons of damage", True, False, Claw)
@@ -225,6 +229,7 @@ class Herb(Enemy):
         super(Herb, self).__init__(name, desc, 150, Tail())
         self.weapon = weapon
 
+
 class Tri(Herb):
     def __init__(self):
         super(Tri, self).__init__('Triceratops', 'An angry Ticeratops that will poke you with its horns', Tail())
@@ -261,7 +266,7 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
-you = Characters('you', 'you are yourself', 50, 0, 1)
+you = Characters('You', 'you are yourself', 50, 0, 1)
 
 # Initialize Rooms
 airplane = Room("Airplane Landing Area\n",
