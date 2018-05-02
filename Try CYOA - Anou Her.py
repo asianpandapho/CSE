@@ -27,12 +27,12 @@ class Weapons(Item):
 
 class Claw(Weapons):
     def __init__(self):
-        super(Claw, self).__init__("Claws", "Carnivore claws", 25)
+        super(Claw, self).__init__("claws", "Carnivore claws", 25)
 
 
 class Tail(Weapons):
     def __init__(self):
-        super(Tail, self).__init__("Tail", "Herbivore Tail", 15)
+        super(Tail, self).__init__("tail", "Herbivore Tail", 15)
 
 
 class Tranq(Weapons):
@@ -102,19 +102,19 @@ class Net(Misc):
 
 
 class Healing(Item):
-    def __init__(self, name, desc, uses):
+    def __init__(self, name, desc, uses, amount_heals):
         super(Healing, self).__init__(name, desc, 30)
         self.uses = uses
-
+        self.heals = amount_heals
 
 class MedKit(Healing):
     def __init__(self):
-        super(MedKit, self).__init__("Med Kit", "A Med Kit that will fully heal you", 1)
+        super(MedKit, self).__init__("Med Kit", "A Med Kit that will fully heal you", 1, 100)
 
 
 class Bandages(Healing):
     def __init__(self):
-        super(Bandages, self).__init__('Bandage', "A Bandage that will heal you for 10 health", 5)
+        super(Bandages, self).__init__('Bandage', "A Bandage that will heal you for 10 health", 5, 10)
 
 
 class Characters(object):
@@ -136,7 +136,7 @@ class Characters(object):
 
     def swing(self, target):
         target.take_damage(self.weapon.damage)
-        print('%s attacks %s with its %s' % (self.name, target.name, self.weapon.name))
+        print('%s attacked %s with the %s' % (self.name, target.name, self.weapon.name))
         print('It does %s damage' % self.weapon.damage)
         print('%s have %s health left' % (target.name, target.health))
 
@@ -179,6 +179,19 @@ class Player(Characters):
         super(Player, self).__init__(name, desc, 100, 0, 0)
         self.health = health
         self.weapon = weapon
+
+    def heal(self):
+        print('Do you want to heal?')
+        command1 = input(">_")
+        if command1 == "yes":
+            for item in self.inventory:
+                if isinstance(item, Healing):
+                    print('Do you want to use the Med Kit or Bandages?')
+                    command2 = input(">_ ").lower()
+                    if command2 == "MedKit".lower():
+                        self.health += 100
+                    if command2 == "Bandages".lower():
+                        self.health += 10
 
 
 class Carni(Enemy):
