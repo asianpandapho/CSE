@@ -17,3 +17,5 @@ flare_gun = Weapon("Flare Gun", 90, 2)
 tranquilizer = Weapon("Tranquilizer Gun", 90, 1)
 print(tranquilizer.value)
 tranquilizer.sell()
+
+

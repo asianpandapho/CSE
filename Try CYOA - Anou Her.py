@@ -261,7 +261,7 @@ class Stego(Herb):
 
 class Room(object):
     def __init__(self, name, description, north, south, west, east, northeast, northwest, southeast, southwest,
-                 enemies=None):
+                 enemies=None, items=None):
         self.name = name
         self.description = description
         self.n = north
@@ -273,6 +273,7 @@ class Room(object):
         self.se = southeast
         self.sw = southwest
         self.enemies = enemies
+        self.items = items
 
     def move(self, direction):
         global current_node
@@ -305,20 +306,20 @@ visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
              'like Odor Away, a net, and a custom Jurrasic Park lighter\n'
              ' there is a path Northwest,\n',
-             None, None, None, None, None, 'velo', None, None)
+             None, None, None, None, None, 'velo', None, None, Lighter())
 
 velo = Room("Velociraptor Cage\n",
             'You arrive at Velociraptor Valley where you see 4 Velociraptors running around and jumping.\n'
             'They have one huge claw on both of their feet, and they are scared of flares\n.'
             ' There are paths Northeast, North, and West\n',
-            'spino', None, 'tri', None, 'diloph', None, None, None, Velo())
+            'spino', None, 'tri', None, 'diloph', None, None, None, Velo(), Bandages())
 
 tri = Room('Triceratops Cage\n',
            'You arrive at Triceratops Track , there is a Triceratops munching on some leaves,\n'
            'it looks pretty friendly however you should not get close to it,\n'
            '(I feel you can ride it though)\n'
            ' there are paths Northwest, East, and North\n', 'brachio', None, None, 'velo', None, 'mega', None, None,
-           Tri())
+           Tri(), Net())
 
 brachio = Room('Brachiosaurus Cage\n',
                'You arrive at Brachiosaurus Bridge, you see huge dinosaurs walking around and eating from\n'
@@ -329,7 +330,7 @@ spino = Room('Spinosaurus Cage\n',
              'You arrive at Spinosaurus Station and see a huge Spinosaurus, it look very hungry,\n'
              'you don\'t want to mess with it, however 2 trang bullets will make it unconscious\n'
              ' there are paths East, North, and West\n',
-             't_rex', None, 'brachio', 'diloph', None, None, None, None, Spino())
+             't_rex', None, 'brachio', 'diloph', None, None, None, None, Spino(), Scar())
 
 diloph = Room('Dilophasaurus Cage\n',
               'You arrive at Dilophosaurus Dungeon and see 4 Dilophosaurus fighting,\n'
@@ -391,6 +392,18 @@ while True:
         current_node.enemies = None
     print(current_node.name)
     print(current_node.description)
+
+    if current_node.items is not None:
+        command3 = input('>_').lower()
+        print(current_node.name)
+        print(current_node.description)
+        print('There is an item on the floor would you like to pick it up. Type yes to pick up')
+        if command3 == 'yes':
+            you.inventory.append(current_node.items)
+            print('Equipped.')
+        else:
+            print('You leave the item')
+
 
     command = input('>_').lower().strip()
     if command == 'quit':
