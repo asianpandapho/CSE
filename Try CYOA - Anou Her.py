@@ -154,7 +154,12 @@ class Characters(object):
                 enemy.swing(self)
                 if self.health <= 0:
                     self.dead = True
-                    print('You Died Bro ...')
+                    print("  _____          __  __ ______    ______      ________ _____  _\n"
+                          " / ____|   /\   |  \/  |  ____|  / __ \ \    / /  ____|  __ \| |\n"
+                          "| |  __   /  \  | \  / | |__    | |  | \ \  / /| |__  | |__) | |\n"
+                          "| | |_ | / /\ \ | |\/| |  __|   | |  | |\ \/ / |  __| |  _  /| |\n"
+                          "| |__| |/ ____ \| |  | | |____  | |__| | \  /  | |____| | \ \|_|\n"
+                          " \_____/_/    \_\_|  |_|______|  \____/   \/   |______|_|  \_(_)\n")
                     sys.exit(0)
             elif first_strike == self:
                 if self.weapon == 0:
@@ -289,7 +294,7 @@ airplane = Room("Airplane Landing Area\n",
                 "You can't go there", "You can't go there", "You can't go there", "You can't go there", )
 
 gate = Room("Gate Entrance\n",
-            'You are at the entrance of the park, '
+            'WELCOME TO JURRASSIC PARK, '
             'You are a electrician and you came to do a checkup\n'
             'You have on you a screwdriver and a flashlight\n'
             'there are paths East, West, Northeast, and Northwest, and South, but you should probably go West\n',
@@ -306,7 +311,7 @@ visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
              'like Odor Away, a net, and a custom Jurrasic Park lighter\n'
              ' there is a path Northwest,\n',
-             None, None, None, None, None, 'velo', None, None, Lighter())
+             None, None, None, None, None, 'velo', None, None, None, Lighter())
 
 velo = Room("Velociraptor Cage\n",
             'You arrive at Velociraptor Valley where you see 4 Velociraptors running around and jumping.\n'
@@ -394,18 +399,22 @@ while True:
     print(current_node.description)
 
     if current_node.items is not None:
-        command3 = input('>_').lower()
         print(current_node.name)
         print(current_node.description)
-        print('There is an item on the floor would you like to pick it up. Type yes to pick up')
+        print('There is a/an %s on the floor would you like to pick it up. Type yes to pick up\n'
+              % current_node.items.name)
+        command3 = input('>_').lower()
         if command3 == 'yes':
             you.inventory.append(current_node.items)
             print('Equipped.')
         else:
             print('You leave the item')
 
-
     command = input('>_').lower().strip()
+    if command == 'inv':
+        print('YOUR INV:')
+        for i in you.inventory:
+            print(i.name)
     if command == 'quit':
         quit(0)
     if command in long_directions:
