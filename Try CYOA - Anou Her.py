@@ -107,6 +107,7 @@ class Healing(Item):
         self.uses = uses
         self.heals = amount_heals
 
+
 class MedKit(Healing):
     def __init__(self):
         super(MedKit, self).__init__("Med Kit", "A Med Kit that will fully heal you", 1, 100)
@@ -147,11 +148,39 @@ class Characters(object):
 
     def fight(self, enemy):
         print('You engage in a fight with the %s' % enemy.name)
-        first_strike = random.choice([enemy, self])
         while self.health >= 0 and enemy.health > 0:
-            input()
-            if first_strike == enemy:
+            choice = input('>_')
+            print('What will you do:\n'
+                  '1.Fight\n'
+                  '2.Heal\n'
+                  '3.Run')
+            if choice is '1':
+                if self.weapon == 0:
+                    print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
+                    sys.exit(0)
+                else:
+                    self.swing(enemy)
+            if choice is '2':
+                for item in self.inventory:
+                    if isinstance(item, Healing):
+                        print('Do you want to use the Med Kit or Bandages?')
+                        command2 = input(">_ ").lower()
+                        if command2 == "MedKit".lower():
+                            self.health += 100
+                            print('You used the MedKit and gained back 100 HP')
+                        if command2 == "Bandages".lower():
+                            self.health += 10
+                            print('You used the Bandages and gained back 10 HP')
+            if choice is '3':
+                roll = random.choice([1, 2])
+                if roll == 1:
+                    print('You couldn\'t escape')
+                if roll == 2:
+                    print('You ran away safely')
+                current_node = lab
+
                 enemy.swing(self)
+
                 if self.health <= 0:
                     self.dead = True
                     print("  _____          __  __ ______    ______      ________ _____  _\n"
@@ -161,12 +190,7 @@ class Characters(object):
                           "| |__| |/ ____ \| |  | | |____  | |__| | \  /  | |____| | \ \|_|\n"
                           " \_____/_/    \_\_|  |_|______|  \____/   \/   |______|_|  \_(_)\n")
                     sys.exit(0)
-            elif first_strike == self:
-                if self.weapon == 0:
-                    print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
-                    sys.exit(0)
-                else:
-                    self.swing(enemy)
+
                 if enemy.health <= 0:
                     print('The %s died' % enemy.name)
 
@@ -266,7 +290,7 @@ class Stego(Herb):
 
 class Room(object):
     def __init__(self, name, description, north, south, west, east, northeast, northwest, southeast, southwest,
-                 enemies=None, items=None):
+                 enemies=None, items1=None):
         self.name = name
         self.description = description
         self.n = north
@@ -278,7 +302,7 @@ class Room(object):
         self.se = southeast
         self.sw = southwest
         self.enemies = enemies
-        self.items = items
+        self.items = items1
 
     def move(self, direction):
         global current_node
@@ -382,12 +406,12 @@ current_node = airplane
 directions = ['n', 'e', 's', 'w', 'ne', 'nw', 'se', 'sw']
 long_directions = ['north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']
 
-item1 = Tranq()
+item6 = Tranq()
 item2 = Flare()
 item3 = Scar()
 item4 = OdorAway(3)
 item5 = Lighter()
-you.inventory.append(item1)
+you.inventory.append(item6)
 
 while True:
     if current_node.enemies is not None:
@@ -413,8 +437,8 @@ while True:
     command = input('>_').lower().strip()
     if command == 'inv':
         print('YOUR INV:')
-        for i in you.inventory:
-            print(i.name)
+        for items in you.inventory:
+            print(items.name)
     if command == 'quit':
         quit(0)
     if command in long_directions:
@@ -436,3 +460,6 @@ while True:
     if current_node == copter:
         print('You arrive at the Helipad, you get onto the helicopter and leave the Island. GOOD JOB!')
         exit(0)
+
+    print('--------------------------------------------------------------------------------------------------------'
+          '-----------------------')
