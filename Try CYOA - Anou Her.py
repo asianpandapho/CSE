@@ -137,37 +137,62 @@ class Characters(object):
 
     def swing(self, target):
         target.take_damage(self.weapon.damage)
+        print()
+        print('---------------------------------------------------------------------------------------------------')
         print('%s attacked %s with the %s' % (self.name, target.name, self.weapon.name))
         print('It does %s damage' % self.weapon.damage)
         print('%s have %s health left' % (target.name, target.health))
+        print('---------------------------------------------------------------------------------------------------')
 
     def equip(self, item):
         if isinstance(item, Weapons):
             self.weapon = item
+            print()
+            print('---------------------------------------------------------------------------------------------------')
             print("Equipped.")
 
     def fight(self, enemy):
+        print()
+        print('---------------------------------------------------------------------------------------------------')
         print('You engage in a fight with the %s' % enemy.name)
         while self.health >= 0 and enemy.health > 0:
             choice = input('>_')
+            print()
+            print('---------------------------------------------------------------------------------------------------')
             print('What will you do:\n'
                   '1.Fight\n'
                   '2.Heal\n'
                   '3.Run')
+            print('---------------------------------------------------------------------------------------------------')
             if choice is '1':
                 if self.weapon == 0:
+                    print()
                     print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
                     sys.exit(0)
                 else:
                     self.swing(enemy)
+                    enemy.swing(self)
             if choice is '2':
                 for item in self.inventory:
                     if isinstance(item, Healing):
+                        print()
+                        print('----------------------------------------------------------------------------------------'
+                              '-----------')
                         print('Do you want to use the Med Kit or Bandages?')
+                        print(
+                            '------------------------------------------------------------------------------------------'
+                            '---------')
                         command2 = input(">_ ").lower()
                         if command2 == "MedKit".lower():
                             self.health += 100
+                            print()
+                            print(
+                                '-------------------------------------------------------------------------------'
+                                '--------------------')
                             print('You used the MedKit and gained back 100 HP')
+                            print(
+                                '-------------------------------------------------------------------------------'
+                                '--------------------')
                         if command2 == "Bandages".lower():
                             self.health += 10
                             print('You used the Bandages and gained back 10 HP')
@@ -429,14 +454,20 @@ while True:
     if current_node.items is not None:
         print(current_node.name)
         print(current_node.description)
+        print()
+        print('---------------------------------------------------------------------------------------------------')
         print('There is a/an %s on the floor would you like to pick it up. Type yes to pick up\n'
               % current_node.items.name)
+        print('---------------------------------------------------------------------------------------------------')
         command3 = input('>_').lower()
         if command3 == 'yes':
             you.inventory.append(current_node.items)
             print('Equipped.')
         else:
+            print()
+            print('---------------------------------------------------------------------------------------------------')
             print('You leave the item')
+            print('---------------------------------------------------------------------------------------------------')
 
     command = input('>_').lower().strip()
     if command == 'inv':
@@ -454,7 +485,7 @@ while True:
         except KeyError:
             print('You can\'t go this way')
     elif 'take tranq' in command:
-        you.equip(item1)
+        you.equip(item6)
     elif 'take flare' in command:
         you.equip(item2)
     elif 'take scar' in command:
@@ -462,8 +493,16 @@ while True:
     else:
         print('command not Recognized')
     if current_node == copter:
+        print()
+        print('---------------------------------------------------------------------------------------------------')
         print('You arrive at the Helipad, you get onto the helicopter and leave the Island. GOOD JOB!')
+        print('__          _______ _   _ _   _ ______ _____  _ \n'
+              '\ \        / /_   _| \ | | \ | |  ____|  __ \| |\n'
+              ' \ \  /\  / /  | | |  \| |  \| | |__  | |__) | |\n'
+              '  \ \/  \/ /   | | | . ` | . ` |  __| |  _  /| |\n'
+              '   \  /\  /   _| |_| |\  | |\  | |____| | \ \|_|\n'
+              '    \/  \/   |_____|_| \_|_| \_|______|_|  \_(_)')
+        print('---------------------------------------------------------------------------------------------------')
         exit(0)
 
-    print('--------------------------------------------------------------------------------------------------------'
-          '-----------------------')
+    print('---------------------------------------------------------------------------------------------------')
