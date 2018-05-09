@@ -128,7 +128,7 @@ class Characters(object):
         self.enemy = False
         self.block = block
         self.fighta = False
-        self.inventory = [Screwdriver, Flashlight]
+        self.inventory = [Screwdriver(), Flashlight()]
 
     def take_damage(self, amt):
         self.health -= amt
@@ -172,14 +172,18 @@ class Characters(object):
                             self.health += 10
                             print('You used the Bandages and gained back 10 HP')
             if choice is '3':
-                roll = random.choice([1, 2])
-                if roll == 1:
-                    print('You couldn\'t escape')
-                if roll == 2:
-                    print('You ran away safely')
-                current_node = lab
-
-                enemy.swing(self)
+                try:
+                    roll = random.choice([1, 2])
+                    if roll == 1:
+                        print("You couldn't escape")
+                        enemy.swing(self)
+                    if roll == 2:
+                        random_node = random.choice([lab, gate])
+                        print('You ran away safely')
+                        global current_node
+                        current_node = random_node
+                except AttributeError:
+                    print('Oof')
 
                 if self.health <= 0:
                     self.dead = True
@@ -328,7 +332,7 @@ lab = Room("Laboratory\n",
            'You go to the Laboratory and look at how the genetically modify dinosaurs\n'
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
            ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n'
-           'to equip the tranq print equip tranq, to equip flare print equip flare\n',
+           'to equip the tranq print take tranq, to equip flare print take flare\n',
            None, None, None, None, 'tri', None, None, None)
 
 visit = Room('Visitor Center\n',
@@ -449,11 +453,11 @@ while True:
             current_node.move(command)
         except KeyError:
             print('You can\'t go this way')
-    elif 'equip tranq' in command:
+    elif 'take tranq' in command:
         you.equip(item1)
-    elif 'equip flare' in command:
+    elif 'take flare' in command:
         you.equip(item2)
-    elif 'equip scar' in command:
+    elif 'take scar' in command:
         you.equip(item3)
     else:
         print('command not Recognized')
