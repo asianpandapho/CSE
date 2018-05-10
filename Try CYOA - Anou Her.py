@@ -179,23 +179,26 @@ class Characters(object):
                         print('----------------------------------------------------------------------------------------'
                               '-----------')
                         print('Do you want to use the Med Kit or Bandages?')
+                        print('To use the MedKit print 1 and to use the Bandages print 2')
                         print(
                             '------------------------------------------------------------------------------------------'
                             '---------')
                         command2 = input(">_ ").lower()
-                        if command2 == "MedKit".lower():
+                        if command2 == "1":
                             self.health += 100
                             print()
                             print(
                                 '-------------------------------------------------------------------------------'
                                 '--------------------')
                             print('You used the MedKit and gained back 100 HP')
+                            print('Now you have %s HP' % self.health)
                             print(
                                 '-------------------------------------------------------------------------------'
                                 '--------------------')
-                        if command2 == "Bandages".lower():
+                        if command2 == "2":
                             self.health += 10
                             print('You used the Bandages and gained back 10 HP')
+                            print('Now you have %s HP' % self.health)
             if choice is '3':
                 try:
                     roll = random.choice([1, 2])
@@ -207,7 +210,7 @@ class Characters(object):
                         print('You ran away safely')
                         global current_node
                         current_node = random_node
-                except AttributeError:
+                except KeyError:
                     print('Oof')
 
                 if self.health <= 0:
@@ -248,8 +251,10 @@ class Player(Characters):
                     command2 = input(">_ ").lower()
                     if command2 == "MedKit".lower():
                         self.health += 100
+                        print(self.health)
                     if command2 == "Bandages".lower():
                         self.health += 10
+                        print(self.health)
 
 
 class Carni(Enemy):
@@ -358,7 +363,7 @@ lab = Room("Laboratory\n",
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
            ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n'
            'to equip the tranq print take tranq, to equip flare print take flare\n',
-           None, None, None, None, 'tri', None, None, None)
+           None, None, None, None, 'tri', None, None, None, None,Bandages())
 
 visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
@@ -370,7 +375,7 @@ velo = Room("Velociraptor Cage\n",
             'You arrive at Velociraptor Valley where you see 4 Velociraptors running around and jumping.\n'
             'They have one huge claw on both of their feet, and they are scared of flares\n.'
             ' There are paths Northeast, North, and West\n',
-            'spino', None, 'tri', None, 'diloph', None, None, None, Velo(), Bandages())
+            'spino', None, 'tri', None, 'diloph', None, None, None, Velo())
 
 tri = Room('Triceratops Cage\n',
            'You arrive at Triceratops Track , there is a Triceratops munching on some leaves,\n'
@@ -463,6 +468,7 @@ while True:
         if command3 == 'yes':
             you.inventory.append(current_node.items)
             print('Equipped.')
+            current_node.items = None
         else:
             print()
             print('---------------------------------------------------------------------------------------------------')
