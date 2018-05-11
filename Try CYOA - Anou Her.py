@@ -155,7 +155,8 @@ class Characters(object):
         print()
         print('---------------------------------------------------------------------------------------------------')
         print('You engage in a fight with the %s' % enemy.name)
-        while self.health >= 0 and enemy.health > 0:
+        break_combat = False
+        while self.health >= 0 and enemy.health > 0 and not break_combat:
             choice = input('>_')
             print()
             print('---------------------------------------------------------------------------------------------------')
@@ -210,6 +211,7 @@ class Characters(object):
                         print('You ran away safely')
                         global current_node
                         current_node = random_node
+                        break_combat = True
                 except KeyError:
                     print('Oof')
 
@@ -302,7 +304,7 @@ class Diloph(Carni):
 
 class Herb(Enemy):
     def __init__(self, name, desc, weapon):
-        super(Herb, self).__init__(name, desc, 150, Tail())
+        super(Herb, self).__init__(name, desc, 200, Tail())
         self.weapon = weapon
 
 
@@ -324,7 +326,7 @@ class Stego(Herb):
 
 class Room(object):
     def __init__(self, name, description, north, south, west, east, northeast, northwest, southeast, southwest,
-                 enemies=None, items1=None):
+                 enemies=None, items1=None, obstacle=None):
         self.name = name
         self.description = description
         self.n = north
@@ -337,6 +339,7 @@ class Room(object):
         self.sw = southwest
         self.enemies = enemies
         self.items = items1
+        self.obstacle = obstacle
 
     def move(self, direction):
         global current_node
@@ -363,7 +366,7 @@ lab = Room("Laboratory\n",
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
            ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n'
            'to equip the tranq print take tranq, to equip flare print take flare\n',
-           None, None, None, None, 'tri', None, None, None, None,Bandages())
+           None, None, None, None, 'tri', None, None, None, None, Bandages())
 
 visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
