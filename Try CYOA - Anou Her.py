@@ -2,22 +2,6 @@ import random
 import sys
 
 
-class Obstacles(object):
-    def __init__(self, name, desc):
-        self.name = name
-        self.desc = desc
-        self.cleared = False
-
-
-class Vent(Obstacles):
-    def __init__(self):
-        super(Vent, self).__init__('Vent', 'A vent that has to be screwed to open')
-
-
-class Dark(Obstacles):
-    def __init__(self):
-        super(Dark, self).__init__('Darkness', 'Use your flashlight')
-
 
 class Item(object):
     def __init__(self, name, desc, value):
@@ -88,9 +72,6 @@ class Flashlight(Tool):
     def on(self):
         print('You turn the Flashlight on')
 
-    def off(self):
-        print('You turn off the flashlight')
-
 
 class Misc(Item):
     def __init__(self, name, desc, uses):
@@ -133,6 +114,23 @@ class MedKit(Healing):
 class Bandages(Healing):
     def __init__(self):
         super(Bandages, self).__init__('Bandage', "A Bandage that will heal you for 10 health", 5, 10)
+
+
+class Obstacles(object):
+    def __init__(self, name, desc):
+        self.name = name
+        self.desc = desc
+        self.cleared = False
+
+
+class Vent(Obstacles):
+    def __init__(self):
+        super(Vent, self).__init__('Vent', 'A vent that has to be screwed to open')
+
+
+class Dark(Obstacles):
+    def __init__(self):
+        super(Dark, self).__init__('Darkness', 'Use your flashlight')
 
 
 class Characters(object):
@@ -496,6 +494,27 @@ while True:
             print('---------------------------------------------------------------------------------------------------')
             current_node.items = None
 
+    if current_node.obstacle is not None:
+        print("The %s is in your way" % current_node.obstacle.name)
+        for item in you.inventory:
+            if isinstance(item, Screwdriver):
+                print('Do you want to unscrew the %s' % current_node.obstacle.name)
+                print('Print unscrew to unscrew')
+                command4 = input('>___').lower().strip()
+                if command4 == 'unscrew':
+                    print('You unscrew the vent and get in.')
+                    current_node.obstacle = None
+    if current_node.obstacle2 is not None:
+        print("The %s is in your way" % current_node.obstacle2.name)
+        for item in you.inventory:
+            if isinstance(item, Flashlight):
+                print('Do you want to remove the %s' % current_node.obstacle2.name)
+                print('Print on to turn on the flashlight')
+                command4 = input('>___').lower().strip()
+                if command4 == 'on':
+                    print('You turn on the light and now you can see.')
+                    current_node.obstacle2 = None
+
     command = input('>_').lower().strip()
     if command == 'inv':
         print('YOUR INV:')
@@ -518,7 +537,7 @@ while True:
     elif 'take scar' in command:
         you.equip(item3)
     else:
-        print('command not Recognized')
+        print('')
     if current_node == copter:
         print()
         print('---------------------------------------------------------------------------------------------------')
