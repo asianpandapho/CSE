@@ -2,6 +2,23 @@ import random
 import sys
 
 
+class Obstacles(object):
+    def __init__(self, name, desc):
+        self.name = name
+        self.desc = desc
+        self.cleared = False
+
+
+class Vent(Obstacles):
+    def __init__(self):
+        super(Vent, self).__init__('Vent', 'A vent that has to be screwed to open')
+
+
+class Dark(Obstacles):
+    def __init__(self):
+        super(Dark, self).__init__('Darkness', 'Use your flashlight')
+
+
 class Item(object):
     def __init__(self, name, desc, value):
         self.name = name
@@ -326,7 +343,7 @@ class Stego(Herb):
 
 class Room(object):
     def __init__(self, name, description, north, south, west, east, northeast, northwest, southeast, southwest,
-                 enemies=None, items1=None, obstacle=None):
+                 enemies=None, items1=None, obstacle=None, obstacle2=None):
         self.name = name
         self.description = description
         self.n = north
@@ -340,6 +357,7 @@ class Room(object):
         self.enemies = enemies
         self.items = items1
         self.obstacle = obstacle
+        self.obstacle2 = obstacle2
 
     def move(self, direction):
         global current_node
@@ -366,7 +384,7 @@ lab = Room("Laboratory\n",
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
            ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n'
            'to equip the tranq print take tranq, to equip flare print take flare\n',
-           None, None, None, None, 'tri', None, None, None, None, Bandages())
+           None, None, None, None, 'tri', None, None, None, None, Bandages(), Vent(), Dark())
 
 visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
@@ -448,7 +466,6 @@ item2 = Flare()
 item3 = Scar()
 item4 = OdorAway(3)
 item5 = Lighter()
-you.inventory.append(item6)
 
 while True:
     if current_node.enemies is not None:
@@ -477,6 +494,7 @@ while True:
             print('---------------------------------------------------------------------------------------------------')
             print('You leave the item')
             print('---------------------------------------------------------------------------------------------------')
+            current_node.items = None
 
     command = input('>_').lower().strip()
     if command == 'inv':
