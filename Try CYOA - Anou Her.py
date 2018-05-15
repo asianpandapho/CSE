@@ -1,7 +1,50 @@
 import random
 import sys
 
-
+print('$$$$$$$$$$$$$$$$$$$$$$$$$$$**""""`` ````""""*R$$$$$$$$$$$$$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$$$$$$$$*""      ..........      `"$$$$$$$$$$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$$$$$$"    .ue@$$$********$$$$Weu.   ` *$$$$$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$$#"   ue$$*#""              `""*$$No.   "R$$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$P"   u@$*"`                         "#$$o.  ^*$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$P"  .o$R"               . .WN.           "$$Nu  `$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$"  .@$$`          $$$$$$$$$$$$$$$$W           "$$u "$$$$$$$$$$$\n'
+      '$$$$$$$$#   o$#`      ueL  $$$$$$$$$$$$$$$$ku.           "$$u  "$$$$$$$$$\n'
+      '$$$$$$$"  x$P`        `"$$u$$$$$$$$$$$$$$"#$$$L            "$o   *$$$$$$$\n'
+      '$$$$$$"  d$"        #$u.2$$$$$$$$$$$$$$$$  #$$$Nu            $$.  #$$$$$$\n'
+      '$$$$$"  @$"          $$$$$$$$$$$$$$$$$$$$k  $$#*$$u           #$L  #$$$$$\n'
+      '$$$$"  d$         #Nu@$$$$$$$$$$$$$$$$$$"  x$$L #$$$o.         #$c  #$$$$\n'
+      '$$$F  d$          .$$$$$$$$$$$$$$$$$$$$N  d$$$$  "$$$$$u        #$L  #$$$\n'
+      '$$$  :$F        ..`$$$$$$$$$$$$$$$$$$$$$$$$$$$`    R$$$$$eu.     $$   $$$\n'
+      '$$!  $$        . R$$$$$$$$$$$$$$$$$$$$$$$$$$$$$.   @$$$$$$$$Nu    $N  `$$\n'
+      '$$  x$"        Re$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$uu@"``"$$$$$$$i   #$:  $$\n'
+      '$E  $$       c 8$$$$$$$$$$$$$$$$$$$$$G(   ``^*$$$$$$$WW$$$$$$$$N   $$  4$\n'
+      '$~ :$$N. tL i)$$$$$$$$$$$$$$$$$$$$$$$$$N       ^#R$$$$$$$$$$$$$$$  9$   $\n'
+      '$  t$$$$u$$W$$$$$$$$$$$$$$!$$$$$$$$$$$$$&       . c?"*$$$R$$$$$$$   $k  $\n'
+      '$  @$$$$$$$$$$$$$$$$$$$$"E F!$$$$$$$$$$."        +."@\* x .""*$$"   $B  $\n'
+      '$  $$$$$$$$$$$$$$$$"$)#F     $$$$$$$$$$$           `  -d>x"*=."`    $$  $\n'
+      '$  $$$$$$$$$$?$$R$$ `$d$$$    $$$$$$$$$$ > .                "       $$  $\n'
+      '$  $$$$$$$($$@$"` P *@$.@#"!    "*$$$$$$$L!.                        $$  $\n'
+      '$  9$$$$$$$L#$L  ! " <$$`          "*$$$$$NL:"z  f                  $E  $\n'
+      '$> ?$$$$ $$$b$^      .$c .ueu.        `"$$$$b"x"#  "               x$!  $\n'
+      '$k  $$$$N$ "$$L:$oud$$$` d$ .u.         "$$$$$o." #f.              $$   $\n'
+      '$$  R$""$$o.$"$$$$""" ue$$$P"`"c          "$$$$$$Wo$               $F  t$\n'
+      '$$: $&  $*$$u$$$$u.ud$R" `    ^            "#*****                @$   $$\n'
+      '$$N  $$: E 3$$$$$$$$$"                                           d$"  x$$\n'
+      '$$$k  $$   F *$$$$*"                                            :$P   $$$\n'
+      '$$$$  $$b                                                      .$P   $$$$\n'
+      '$$$b  `$b                                                     .$$   @$$$$\n'
+      '$$$$$N  "$N                                                  .$P   @$$$$$\n'
+      '$$$$$$N   $$c                                               $$$  .$$$$$$$\n'
+      '$$$$$$$$.  "$N.                                           .@$"  x$$$$$$$$\n'
+      '$$$$$$$$$o   #$N.                                       .@$#  .@$$$$$$$$$\n'
+      '$$$$$$$$$$$u  `#$Nu                                   u@$#   u$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$u   "R$o.                             ue$R"   u$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$o.  ^#$$bu.                     .uW$P"`  .u$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$$$$u   `"#R$$Wou..... ....uueW$$*#"   .u@$$$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$$$$$$Nu.    `""#***$$$$$***"""`    .o$$$$$$$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$$$$$$$$$$$eu..               ...ed$$$$$$$$$$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$NWWeeeeedW@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
 
 class Item(object):
     def __init__(self, name, desc, value):
@@ -341,7 +384,7 @@ class Stego(Herb):
 
 class Room(object):
     def __init__(self, name, description, north, south, west, east, northeast, northwest, southeast, southwest,
-                 enemies=None, items1=None, obstacle=None, obstacle2=None):
+                 enemies=None, items1=None, items2=None, obstacle=None, obstacle2=None):
         self.name = name
         self.description = description
         self.n = north
@@ -354,6 +397,7 @@ class Room(object):
         self.sw = southwest
         self.enemies = enemies
         self.items = items1
+        self.items2 = items2
         self.obstacle = obstacle
         self.obstacle2 = obstacle2
 
@@ -372,7 +416,7 @@ airplane = Room("Airplane Landing Area\n",
 
 gate = Room("Gate Entrance\n",
             'WELCOME TO JURRASSIC PARK, '
-            'You are a electrician and you came to do a checkup\n'
+            'You are an electrician and you came to do a checkup\n'
             'You have on you a screwdriver and a flashlight\n'
             'there are paths East, West, Northeast, and Northwest, and South, but you should probably go West\n',
             None, 'airplane', 'lab', 'visit', 'velo', 'tri', None, None)
@@ -382,7 +426,7 @@ lab = Room("Laboratory\n",
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
            ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n'
            'to equip the tranq print take tranq, to equip flare print take flare\n',
-           None, None, None, None, 'tri', None, None, None, None, Bandages(), Vent(), Dark())
+           None, None, None, None, 'tri', None, None, None, None, Bandages(), Tranq(), Vent(), Dark())
 
 visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
@@ -459,12 +503,6 @@ current_node = airplane
 directions = ['n', 'e', 's', 'w', 'ne', 'nw', 'se', 'sw']
 long_directions = ['north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']
 
-item6 = Tranq()
-item2 = Flare()
-item3 = Scar()
-item4 = OdorAway(3)
-item5 = Lighter()
-
 while True:
     if current_node.enemies is not None:
         print(current_node.name)
@@ -515,6 +553,26 @@ while True:
                     print('You turn on the light and now you can see.')
                     current_node.obstacle2 = None
 
+    if current_node.items2 is not None:
+        print(current_node.name)
+        print(current_node.description)
+        print()
+        print('---------------------------------------------------------------------------------------------------')
+        print('There is a/an %s on the floor would you like to pick it up. Type yes to pick up\n'
+              % current_node.items2.name)
+        print('---------------------------------------------------------------------------------------------------')
+        command3 = input('>_').lower()
+        if command3 == 'yes':
+            you.inventory.append(current_node.items2)
+            print('Equipped.')
+            current_node.items2 = None
+        else:
+            print()
+            print('---------------------------------------------------------------------------------------------------')
+            print('You leave the item')
+            print('---------------------------------------------------------------------------------------------------')
+            current_node.items2 = None
+
     command = input('>_').lower().strip()
     if command == 'inv':
         print('YOUR INV:')
@@ -530,12 +588,6 @@ while True:
             current_node.move(command)
         except KeyError:
             print('You can\'t go this way')
-    elif 'take tranq' in command:
-        you.equip(item6)
-    elif 'take flare' in command:
-        you.equip(item2)
-    elif 'take scar' in command:
-        you.equip(item3)
     else:
         print('')
     if current_node == copter:
