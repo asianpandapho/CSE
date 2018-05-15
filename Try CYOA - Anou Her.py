@@ -43,8 +43,9 @@ print('$$$$$$$$$$$$$$$$$$$$$$$$$$$**""""`` ````""""*R$$$$$$$$$$$$$$$$$$$$$$$$$$$
       '$$$$$$$$$$$$$$$$$$u   `"#R$$Wou..... ....uueW$$*#"   .u@$$$$$$$$$$$$$$$$$\n'
       '$$$$$$$$$$$$$$$$$$$$Nu.    `""#***$$$$$***"""`    .o$$$$$$$$$$$$$$$$$$$$$\n'
       '$$$$$$$$$$$$$$$$$$$$$$$$$eu..               ...ed$$$$$$$$$$$$$$$$$$$$$$$$\n'
-      '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$NWWeeeeedW@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n'
-      '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n')
+      '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$NWWOOOOOOW@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n'
+      '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n'
+      'Trademarked by Universal Studios')
 
 
 class Item(object):
@@ -225,13 +226,14 @@ class Characters(object):
                   '3.Run')
             print('---------------------------------------------------------------------------------------------------')
             if choice is '1':
-                if self.weapon == 0:
-                    print()
-                    print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
-                    sys.exit(0)
-                else:
-                    self.swing(enemy)
-                    enemy.swing(self)
+                for item in self.inventory:
+                    if isinstance(item, Weapons):
+                        print()
+                        print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
+                        sys.exit(0)
+                    else:
+                        self.swing(enemy)
+                        enemy.swing(self)
             if choice is '2':
                 for item in self.inventory:
                     if isinstance(item, Healing):
@@ -385,7 +387,7 @@ class Stego(Herb):
 
 class Room(object):
     def __init__(self, name, description, north, south, west, east, northeast, northwest, southeast, southwest,
-                 enemies=None, items1=None, items2=None, obstacle=None, obstacle2=None):
+                 enemies=None, items1=None, obstacle=None, obstacle2=None, items2=None):
         self.name = name
         self.description = description
         self.n = north
@@ -398,16 +400,16 @@ class Room(object):
         self.sw = southwest
         self.enemies = enemies
         self.items = items1
-        self.items2 = items2
         self.obstacle = obstacle
         self.obstacle2 = obstacle2
+        self.items2 = items2
 
     def move(self, direction):
         global current_node
         current_node = globals()[getattr(self, direction)]
 
 
-you = Characters('You', 'you are yourself', 50, 0, 1)
+you = Characters('You', 'you are yourself', 100, 0, 1)
 
 # Initialize Rooms
 airplane = Room("Airplane Landing Area\n",
@@ -425,9 +427,8 @@ gate = Room("Gate Entrance\n",
 lab = Room("Laboratory\n",
            'You go to the Laboratory and look at how the genetically modify dinosaurs\n'
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
-           ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n'
-           'to equip the tranq print take tranq, to equip flare print take flare\n',
-           None, None, None, None, 'tri', None, None, None, None, Bandages(), Tranq(), Vent(), Dark())
+           ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n',
+           None, None, None, None, 'tri', None, None, None, None, Bandages(), Vent(), Dark(), Tranq())
 
 visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
@@ -543,36 +544,44 @@ while True:
                 if command4 == 'unscrew':
                     print('You unscrew the vent and get in.')
                     current_node.obstacle = None
-    if current_node.obstacle2 is not None:
-        print("The %s is in your way" % current_node.obstacle2.name)
-        for item in you.inventory:
-            if isinstance(item, Flashlight):
-                print('Do you want to remove the %s' % current_node.obstacle2.name)
-                print('Print on to turn on the flashlight')
-                command4 = input('>___').lower().strip()
-                if command4 == 'on':
-                    print('You turn on the light and now you can see.')
-                    current_node.obstacle2 = None
+                if command4 != 'unscrew':
+                    print('You need to unscrew the vent to get in')
 
-    if current_node.items2 is not None:
-        print(current_node.name)
-        print(current_node.description)
-        print()
-        print('---------------------------------------------------------------------------------------------------')
-        print('There is a/an %s on the floor would you like to pick it up. Type yes to pick up\n'
-              % current_node.items2.name)
-        print('---------------------------------------------------------------------------------------------------')
-        command3 = input('>_').lower()
-        if command3 == 'yes':
-            you.inventory.append(current_node.items2)
-            print('Equipped.')
-            current_node.items2 = None
-        else:
-            print()
-            print('---------------------------------------------------------------------------------------------------')
-            print('You leave the item')
-            print('---------------------------------------------------------------------------------------------------')
-            current_node.items2 = None
+    if current_node.obstacle is None:
+        if current_node.obstacle2 is not None:
+            print("The %s is in your way" % current_node.obstacle2.name)
+            for item in you.inventory:
+                if isinstance(item, Flashlight):
+                    print('Do you want to remove the %s' % current_node.obstacle2.name)
+                    print('Print on to turn on the flashlight')
+                    command4 = input('>___').lower().strip()
+                    if command4 == 'on':
+                        print('You turn on the light and now you can see.')
+                        current_node.obstacle2 = None
+                    if command4 != 'on':
+                        print('You need to turn on the light to get through')
+
+    if current_node.obstacle is None:
+        if current_node.obstacle2 is None:
+            if current_node.items2 is not None:
+                print(current_node.name)
+                print(current_node.description)
+                print()
+                print('-----------------------------------------------------------------------------------------------')
+                print('There is a/an %s on the floor would you like to pick it up. Type yes to pick up\n'
+                      % current_node.items2.name)
+                print('-----------------------------------------------------------------------------------------------')
+                command3 = input('>_').lower()
+                if command3 == 'yes':
+                    you.inventory.append(current_node.items2)
+                    print('Equipped.')
+                    current_node.items2 = None
+                else:
+                    print()
+                    print('-------------------------------------------------------------------------------------------')
+                    print('You leave the item')
+                    print('-------------------------------------------------------------------------------------------')
+                    current_node.items2 = None
 
     command = input('>_').lower().strip()
     if command == 'inv':
