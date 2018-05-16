@@ -45,7 +45,7 @@ print('$$$$$$$$$$$$$$$$$$$$$$$$$$$**""""`` ````""""*R$$$$$$$$$$$$$$$$$$$$$$$$$$$
       '$$$$$$$$$$$$$$$$$$$$$$$$$eu..               ...ed$$$$$$$$$$$$$$$$$$$$$$$$\n'
       '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$NWWOOOOOOW@$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n'
       '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n'
-      'Trademarked by Universal Studios')
+      'Trademarked by Universal Studios.')
 
 
 class Item(object):
@@ -209,7 +209,7 @@ class Characters(object):
             self.weapon = item
             print()
             print('---------------------------------------------------------------------------------------------------')
-            print("Equipped.")
+            print("New Weapon Equipped.")
 
     def fight(self, enemy):
         print()
@@ -226,41 +226,41 @@ class Characters(object):
                   '3.Run')
             print('---------------------------------------------------------------------------------------------------')
             if choice is '1':
-                for item in self.inventory:
-                    if isinstance(item, Weapons):
-                        print()
-                        print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
-                        sys.exit(0)
-                    else:
-                        self.swing(enemy)
-                        enemy.swing(self)
+                if self.weapon.name != "Hands":
+                    self.swing(enemy)
+                    enemy.swing(self)
+                else:
+                    print()
+                    print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
+                    sys.exit(0)
+
             if choice is '2':
-                for item in self.inventory:
-                    if isinstance(item, Healing):
+                if isinstance(item, Healing):
+                    print()
+                    print('----------------------------------------------------------------------------------------'
+                          '-----------')
+                    print('Do you want to use the Med Kit or Bandages?')
+                    print('To use the MedKit print 1 and to use the Bandages print 2')
+                    print(
+                        '------------------------------------------------------------------------------------------'
+                        '---------')
+                    command2 = input(">_ ").lower()
+                    if command2 == "1":
+                        self.health += 100
                         print()
-                        print('----------------------------------------------------------------------------------------'
-                              '-----------')
-                        print('Do you want to use the Med Kit or Bandages?')
-                        print('To use the MedKit print 1 and to use the Bandages print 2')
                         print(
-                            '------------------------------------------------------------------------------------------'
-                            '---------')
-                        command2 = input(">_ ").lower()
-                        if command2 == "1":
-                            self.health += 100
-                            print()
-                            print(
-                                '-------------------------------------------------------------------------------'
-                                '--------------------')
-                            print('You used the MedKit and gained back 100 HP')
-                            print('Now you have %s HP' % self.health)
-                            print(
-                                '-------------------------------------------------------------------------------'
-                                '--------------------')
-                        if command2 == "2":
-                            self.health += 10
-                            print('You used the Bandages and gained back 10 HP')
-                            print('Now you have %s HP' % self.health)
+                            '-------------------------------------------------------------------------------'
+                            '--------------------')
+                        print('You used the MedKit and gained back 100 HP')
+                        print('Now you have %s HP' % self.health)
+                        print(
+                            '-------------------------------------------------------------------------------'
+                            '--------------------')
+                    if command2 == "2":
+                        self.health += 10
+                        print('You used the Bandages and gained back 10 HP')
+                        print('Now you have %s HP' % self.health)
+
             if choice is '3':
                 try:
                     roll = random.choice([1, 2])
@@ -409,7 +409,7 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
-you = Characters('You', 'you are yourself', 100, 0, 1)
+you = Characters('You', 'you are yourself', 100, Weapons("Hands", "Your hands", 0), 1)
 
 # Initialize Rooms
 airplane = Room("Airplane Landing Area\n",
@@ -526,6 +526,7 @@ while True:
         if command3 == 'yes':
             you.inventory.append(current_node.items)
             print('Equipped.')
+            you.equip(current_node.items)
             current_node.items = None
         else:
             print()
@@ -574,6 +575,7 @@ while True:
                 command3 = input('>_').lower()
                 if command3 == 'yes':
                     you.inventory.append(current_node.items2)
+                    you.equip(current_node.items2)
                     print('Equipped.')
                     current_node.items2 = None
                 else:
@@ -612,5 +614,5 @@ while True:
               '    \/  \/   |_____|_| \_|_| \_|______|_|  \_(_)')
         print('---------------------------------------------------------------------------------------------------')
         exit(0)
-
+    print(you.weapon.name)
     print('---------------------------------------------------------------------------------------------------')
