@@ -235,6 +235,8 @@ class Characters(object):
                     sys.exit(0)
 
             if choice is '2':
+                if self.health == 100:
+                    print('You already have 100 health you cannot heal anymore.')
                 if isinstance(item, Healing):
                     print()
                     print('----------------------------------------------------------------------------------------'
@@ -308,21 +310,20 @@ class Player(Characters):
         print('Do you want to heal?')
         command1 = input(">_")
         if command1 == "yes":
-            for item in self.inventory:
-                if isinstance(item, Healing):
-                    print('Do you want to use the Med Kit or Bandages?')
-                    command2 = input(">_ ").lower()
-                    if command2 == "MedKit".lower():
-                        self.health += 100
-                        print(self.health)
-                    if command2 == "Bandages".lower():
-                        self.health += 10
-                        print(self.health)
+            if isinstance(item, Healing):
+                print('Do you want to use the Med Kit or Bandages?')
+                command2 = input(">_ ").lower()
+                if command2 == "MedKit".lower():
+                    self.health += 100
+                    print(self.health)
+                if command2 == "Bandages".lower():
+                    self.health += 10
+                    print(self.health)
 
 
 class Carni(Enemy):
     def __init__(self, name, desc, big, small, weapon):
-        super(Carni, self).__init__(name, desc, 100, Claw)
+        super(Carni, self).__init__(name, desc, 100, Claw())
         self.big = big
         self.small = small
         self.weapon = weapon
@@ -330,37 +331,37 @@ class Carni(Enemy):
 
 class TRex(Carni):
     def __init__(self):
-        super(TRex, self).__init__("T Rex", "A T Rex that does tons of damage", True, False, Claw)
+        super(TRex, self).__init__("T Rex", "A T Rex that does tons of damage", True, False, Claw())
 
 
 class IRex(Carni):
     def __init__(self):
-        super(IRex, self).__init__('I Rex', "An I Rex that does tons of damage", True, False, Claw)
+        super(IRex, self).__init__('I Rex', "An I Rex that does tons of damage", True, False, Claw())
 
 
 class Mega(Carni):
     def __init__(self):
-        super(Mega, self).__init__('Megalodon', 'A big shark that will eat you', True, False, Claw)
+        super(Mega, self).__init__('Megalodon', 'A big shark that will eat you', True, False, Claw())
 
 
 class Spino(Carni):
     def __init__(self):
-        super(Spino, self).__init__('Spinosaurus', 'A big Spinosaurus that does tons of damage', True, False, Claw)
+        super(Spino, self).__init__('Spinosaurus', 'A big Spinosaurus that does tons of damage', True, False, Claw())
 
 
 class Pter(Carni):
     def __init__(self):
-        super(Pter, self).__init__('Pteradon', 'A Pteradon that can swoop down and peck you', True, False, Claw)
+        super(Pter, self).__init__('Pteradon', 'A Pteradon that can swoop down and peck you', True, False, Claw())
 
 
 class Velo(Carni):
     def __init__(self):
-        super(Velo, self).__init__('Velociraptor', 'A smaller dinosaur that will claw your face', False, True, Claw)
+        super(Velo, self).__init__('Velociraptor', 'A smaller dinosaur that will claw your face', False, True, Claw())
 
 
 class Diloph(Carni):
     def __init__(self):
-        super(Diloph, self).__init__('Dilophosaurus', 'A smaller dinosaur that will claw your face', False, True, Claw)
+        super(Diloph, self).__init__('Dilophosaurus', 'A dinosaur that will claw your face', False, True, Claw())
 
 
 class Herb(Enemy):
@@ -614,5 +615,5 @@ while True:
               '    \/  \/   |_____|_| \_|_| \_|______|_|  \_(_)')
         print('---------------------------------------------------------------------------------------------------')
         exit(0)
-    print(you.weapon.name)
+
     print('---------------------------------------------------------------------------------------------------')
