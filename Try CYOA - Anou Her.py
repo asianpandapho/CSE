@@ -201,7 +201,7 @@ class Characters(object):
         print('---------------------------------------------------------------------------------------------------')
         print('%s attacked %s with the %s' % (self.name, target.name, self.weapon.name))
         print('It does %s damage' % self.weapon.damage)
-        print('%s have %s health left' % (target.name, target.health))
+        print('%s has %s health left' % (target.name, target.health))
         print('---------------------------------------------------------------------------------------------------')
 
     def equip(self, item):
@@ -410,7 +410,7 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
-you = Characters('You', 'you are yourself', 100, Weapons("Hands", "Your hands", 0), 1)
+you = Characters('', 'you are yourself', 100, Weapons("Hands", "Your hands", 0), 1)
 
 # Initialize Rooms
 airplane = Room("Airplane Landing Area\n",
@@ -507,6 +507,10 @@ directions = ['n', 'e', 's', 'w', 'ne', 'nw', 'se', 'sw']
 long_directions = ['north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']
 
 while True:
+    if current_node == airplane:
+        names = input('What is your name')
+        you.name = names
+
     if current_node.enemies is not None:
         print(current_node.name)
         print(current_node.description)
