@@ -154,11 +154,19 @@ class Healing(Item):
 class MedKit(Healing):
     def __init__(self):
         super(MedKit, self).__init__("Med Kit", "A Med Kit that will fully heal you", 1, 100)
+        self.uses = 1
+
+
+medkit = MedKit()
 
 
 class Bandages(Healing):
     def __init__(self):
         super(Bandages, self).__init__('Bandage', "A Bandage that will heal you for 10 health", 5, 10)
+        self.uses = 5
+
+
+bandages = Bandages()
 
 
 class Obstacles(object):
@@ -237,7 +245,8 @@ class Characters(object):
             if choice is '2':
                 if self.health == 100:
                     print('You already have 100 health you cannot heal anymore.')
-                if isinstance(item, Healing):
+
+                if self.health < 100:
                     print()
                     print('----------------------------------------------------------------------------------------'
                           '-----------')
@@ -248,20 +257,29 @@ class Characters(object):
                         '---------')
                     command2 = input(">_ ").lower()
                     if command2 == "1":
-                        self.health += 100
-                        print()
-                        print(
-                            '-------------------------------------------------------------------------------'
-                            '--------------------')
-                        print('You used the MedKit and gained back 100 HP')
-                        print('Now you have %s HP' % self.health)
-                        print(
-                            '-------------------------------------------------------------------------------'
-                            '--------------------')
+                        if medkit in you.inventory and medkit.uses > 0:
+                            self.health += 100
+                            print()
+                            print(
+                                '-------------------------------------------------------------------------------'
+                                '--------------------')
+                            print('You used the MedKit and gained back 100 HP')
+                            print('Now you have %s HP' % self.health)
+                            print(
+                                '-------------------------------------------------------------------------------'
+                                '--------------------')
+                            medkit.uses -= 1
+                        else:
+                            print("You don't have a medkit.")
+
                     if command2 == "2":
-                        self.health += 10
-                        print('You used the Bandages and gained back 10 HP')
-                        print('Now you have %s HP' % self.health)
+                        if bandages in you.inventory and bandages.uses > 0:
+                            self.health += 10
+                            print('You used the Bandages and gained back 10 HP')
+                            print('Now you have %s HP' % self.health)
+                            bandages.uses -= 1
+                        else:
+                            print("You don't have any bandages.")
 
             if choice is '3':
                 try:
@@ -305,20 +323,6 @@ class Player(Characters):
         super(Player, self).__init__(name, desc, 100, 0, 0)
         self.health = health
         self.weapon = weapon
-
-    def heal(self):
-        print('Do you want to heal?')
-        command1 = input(">_")
-        if command1 == "yes":
-            if isinstance(item, Healing):
-                print('Do you want to use the Med Kit or Bandages?')
-                command2 = input(">_ ").lower()
-                if command2 == "MedKit".lower():
-                    self.health += 100
-                    print(self.health)
-                if command2 == "Bandages".lower():
-                    self.health += 10
-                    print(self.health)
 
 
 class Carni(Enemy):
@@ -429,7 +433,7 @@ lab = Room("Laboratory\n",
            'You go to the Laboratory and look at how the genetically modify dinosaurs\n'
            'There is a tranquilizer gun on the desk and there is a flare gun on the desk,\n'
            ' conveniently there is a button with the marking DANGER! on it, and there is a path Northeast\n',
-           None, None, None, None, 'tri', None, None, None, None, Bandages(), Vent(), Dark(), Tranq())
+           None, None, None, None, 'tri', None, None, None, None, bandages, Vent(), Dark(), Tranq())
 
 visit = Room('Visitor Center\n',
              'You are at the Visitor Center here Visitors can buy items,\n'
@@ -453,7 +457,7 @@ tri = Room('Triceratops Cage\n',
 brachio = Room('Brachiosaurus Cage\n',
                'You arrive at Brachiosaurus Bridge, you see huge dinosaurs walking around and eating from\n'
                'massive trees, there are paths West, East, and North\n',
-               'stego', None, 'mega', 'spino', None, None, None, None, Brachio())
+               'stego', None, 'mega', 'spino', None, None, None, None, Brachio(), medkit)
 
 spino = Room('Spinosaurus Cage\n',
              'You arrive at Spinosaurus Station and see a huge Spinosaurus, it look very hungry,\n'
