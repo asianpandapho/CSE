@@ -220,6 +220,7 @@ class Characters(object):
             print("New Weapon Equipped.")
 
     def fight(self, enemy):
+
         print()
         print('---------------------------------------------------------------------------------------------------')
         print('You engage in a fight with the %s' % enemy.name)
@@ -237,10 +238,22 @@ class Characters(object):
                 if self.weapon.name != "Hands":
                     self.swing(enemy)
                     enemy.swing(self)
+
+                    if self.health == 0:
+                        break_combat = True
+                        self.dead = True
+                        print("  _____          __  __ ______    ______      ________ _____  _\n"
+                              " / ____|   /\   |  \/  |  ____|  / __ \ \    / /  ____|  __ \| |\n"
+                              "| |  __   /  \  | \  / | |__    | |  | \ \  / /| |__  | |__) | |\n"
+                              "| | |_ | / /\ \ | |\/| |  __|   | |  | |\ \/ / |  __| |  _  /| |\n"
+                              "| |__| |/ ____ \| |  | | |____  | |__| | \  /  | |____| | \ \|_|\n"
+                              " \_____/_/    \_\_|  |_|______|  \____/   \/   |______|_|  \_(_)\n")
+                        sys.exit(0)
+
                 else:
                     print()
                     print('You have no weapon to fight with, so you do no damage. The dinosaur easily kills you')
-                    sys.exit(0)
+                    exit(0)
 
             if choice is '2':
                 if self.health == 100:
@@ -296,16 +309,6 @@ class Characters(object):
                 except KeyError:
                     print('Oof')
 
-                if self.health <= 0:
-                    self.dead = True
-                    print("  _____          __  __ ______    ______      ________ _____  _\n"
-                          " / ____|   /\   |  \/  |  ____|  / __ \ \    / /  ____|  __ \| |\n"
-                          "| |  __   /  \  | \  / | |__    | |  | \ \  / /| |__  | |__) | |\n"
-                          "| | |_ | / /\ \ | |\/| |  __|   | |  | |\ \/ / |  __| |  _  /| |\n"
-                          "| |__| |/ ____ \| |  | | |____  | |__| | \  /  | |____| | \ \|_|\n"
-                          " \_____/_/    \_\_|  |_|______|  \____/   \/   |______|_|  \_(_)\n")
-                    sys.exit(0)
-
                 if enemy.health <= 0:
                     print('The %s died' % enemy.name)
 
@@ -315,6 +318,8 @@ class Enemy(Characters):
         super(Enemy, self).__init__(name, desc, 100, weapon, 1)
         self.health = health
         self.weapon = weapon
+
+
 # Remember to change damage because 15 is not the weapon
 
 
